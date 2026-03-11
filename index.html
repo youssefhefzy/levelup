@@ -597,43 +597,8 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
 </head>
 <body>
 
-<!-- ═══ ONBOARDING ═══ -->
-<div id="onboardScreen">
-  <div class="onboard-card">
-    <div class="ob-logo"><div class="logo-icon">⚡</div>LevelUp</div>
-
-    <div class="ob-step active" id="ob0">
-      <div class="ob-title">Your Life OS Awaits</div>
-      <div class="ob-sub">Track habits, build streaks, manage finances, quit bad habits — all in one place.</div>
-      <input id="obName" placeholder="Enter your name..." style="margin-bottom:14px;">
-      <button class="btn-primary" style="width:100%" onclick="obNext(1)">Let's Build Your OS →</button>
-    </div>
-
-    <div class="ob-step" id="ob1">
-      <div class="ob-title">Choose Your Avatar</div>
-      <div class="ob-sub">Pick the emoji that represents you best.</div>
-      <div class="avatar-grid" id="avGrid"></div>
-      <button class="btn-primary" style="width:100%" onclick="obNext(2)">Continue →</button>
-    </div>
-
-    <div class="ob-step" id="ob2">
-      <div class="ob-title">Ready to Level Up?</div>
-      <div class="ob-sub">Your personal life dashboard is ready. Start tracking, earning XP, and becoming the best version of yourself.</div>
-      <div style="font-size:3rem;margin:16px 0" id="obFinalAva">🧠</div>
-      <div style="font-family:var(--fh);font-size:1rem;font-weight:900;margin-bottom:18px" id="obFinalName">Champion</div>
-      <button class="btn-primary" style="width:100%" onclick="startApp()">Begin My Journey ⚡</button>
-    </div>
-
-    <div class="ob-dots">
-      <div class="ob-dot active" id="od0"></div>
-      <div class="ob-dot" id="od1"></div>
-      <div class="ob-dot" id="od2"></div>
-    </div>
-  </div>
-</div>
-
 <!-- ═══ APP ═══ -->
-<div id="appShell" style="display:none">
+<div id="appShell">
 
   <nav>
     <div class="logo" onclick="goView('dashboard')">
@@ -718,7 +683,24 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
           <h1 id="dashGreet">Good morning 👋</h1>
           <p id="dashDate">Wednesday, March 11, 2026</p>
         </div>
-        <div class="xp-hero">
+      <!-- WELCOME SETUP (first visit) -->
+      <div id="welcomeBanner" style="display:none;background:linear-gradient(135deg,#1a103a,#0c1a3a);border:1px solid rgba(124,58,237,.25);border-radius:18px;padding:22px 24px;margin-bottom:20px;position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(124,58,237,.15),transparent 60%);pointer-events:none"></div>
+        <div style="font-family:var(--fh);font-size:1rem;font-weight:900;color:#fff;margin-bottom:6px">⚡ Welcome to LevelUp!</div>
+        <div style="font-size:.8rem;color:rgba(167,139,250,.7);margin-bottom:16px">Your personal Life OS. Set your name to get started.</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <input id="quickNameInput" placeholder="Enter your name..." style="flex:1;min-width:160px;background:rgba(255,255,255,.08);border:1px solid rgba(124,58,237,.3);color:#fff">
+          <div style="display:flex;gap:6px;flex-wrap:wrap" id="quickAvaRow">
+            <button onclick="setQuickAva('🧠',this)" style="font-size:1.4rem;background:rgba(124,58,237,.2);border:2px solid #7c3aed;border-radius:10px;padding:6px 10px;cursor:pointer">🧠</button>
+            <button onclick="setQuickAva('💪',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">💪</button>
+            <button onclick="setQuickAva('🔥',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🔥</button>
+            <button onclick="setQuickAva('🚀',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🚀</button>
+            <button onclick="setQuickAva('🏆',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🏆</button>
+            <button onclick="setQuickAva('🦁',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🦁</button>
+          </div>
+          <button onclick="saveWelcome()" style="padding:10px 22px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border:none;border-radius:10px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:var(--fb);white-space:nowrap">Let's Go ⚡</button>
+        </div>
+      </div>
           <div class="xp-hero-top">
             <div>
               <div class="xp-lv" id="heroLevel">LEVEL 12 · MIND ARCHITECT</div>
@@ -2975,43 +2957,70 @@ function showToast(icon,t1,t2){
 //  BOOT — runs after ALL functions are defined
 // ═══════════════════════════════════════════════
 
-// Apply saved theme first (no flash)
+// Apply saved theme
 const savedThemeOnBoot = localStorage.getItem('lu_theme');
-if(savedThemeOnBoot) setTheme(savedThemeOnBoot);
-else setTheme('dark');
+setTheme(savedThemeOnBoot || 'dark');
 
-// Apply saved language direction
+// Apply saved language
 const savedLangOnBoot = localStorage.getItem('lu_lang');
 if(savedLangOnBoot && I18N[savedLangOnBoot]){
   currentLang = savedLangOnBoot;
   document.documentElement.dir = I18N[savedLangOnBoot].dir;
 }
 
-// Init onboarding avatar grid
-initOnboard();
-
-// Allow Enter key on name input
-document.getElementById('obName').addEventListener('keydown', function(e){
-  if(e.key === 'Enter') obNext(1);
-});
+// Load saved user data or use defaults
+const savedUserData = JSON.parse(localStorage.getItem('lu_user') || 'null');
+if(savedUserData){
+  userName   = savedUserData.userName  || userName;
+  userAvatar = savedUserData.userAvatar|| userAvatar;
+  xp         = savedUserData.xp        || xp;
+  coins      = savedUserData.coins     || coins;
+  level      = savedUserData.level     || level;
+  streak     = savedUserData.streak    || streak;
+}
 
 // Set today's date in finance tx input
 const txDateEl = document.getElementById('txDate');
 if(txDateEl) txDateEl.value = new Date().toISOString().split('T')[0];
 
-// Check if user already set up — skip onboarding
-const savedUserData = JSON.parse(localStorage.getItem('lu_user') || 'null');
-if(savedUserData && savedUserData.userName && savedUserData.userName !== 'Champion'){
-  ({userName, userAvatar, xp, coins, level, streak} = savedUserData);
-  document.getElementById('onboardScreen').style.display = 'none';
-  document.getElementById('appShell').style.display = '';
-  // Apply saved language after app is shown
-  if(savedLangOnBoot && savedLangOnBoot !== 'en'){
-    setTimeout(() => setLang(savedLangOnBoot), 80);
-  }
-  renderAll();
+// Show welcome banner on first visit
+const isFirstVisit = !localStorage.getItem('lu_user');
+const welcomeBanner = document.getElementById('welcomeBanner');
+if(isFirstVisit && welcomeBanner) welcomeBanner.style.display = 'block';
+
+// Welcome banner functions
+let quickAva = '🧠';
+function setQuickAva(ava, btn){
+  quickAva = ava;
+  document.querySelectorAll('#quickAvaRow button').forEach(b=>{
+    b.style.background='rgba(255,255,255,.06)';
+    b.style.borderColor='transparent';
+  });
+  btn.style.background='rgba(124,58,237,.2)';
+  btn.style.borderColor='#7c3aed';
 }
-// else: onboarding screen stays visible (default)
+function saveWelcome(){
+  const n = document.getElementById('quickNameInput').value.trim();
+  if(n) userName = n;
+  userAvatar = quickAva;
+  saveUser();
+  const wb = document.getElementById('welcomeBanner');
+  if(wb) wb.style.display = 'none';
+  renderAll();
+  showToast('⚡','Welcome, '+userName+'!','Your Life OS is ready. Let\'s build something great.');
+}
+// Also allow Enter in the name input
+document.getElementById('quickNameInput').addEventListener('keydown', function(e){
+  if(e.key === 'Enter') saveWelcome();
+});
+
+// Launch the app immediately
+renderAll();
+
+// Apply saved language translations after render
+if(savedLangOnBoot && savedLangOnBoot !== 'en'){
+  setTimeout(() => setLang(savedLangOnBoot), 80);
+}
 
 }); // end DOMContentLoaded
 </script>
