@@ -17,8 +17,8 @@
  */
 
 // ─── CONFIGURE THESE ──────────────────────────────────────────
-const SUPABASE_URL = 'YOUR_SUPABASE_URL';           // e.g. https://xyzabc.supabase.co
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY'; // Long JWT key from Supabase dashboard
+const SUPABASE_URL = 'https://icljloycgnwvtaqbqmcm.supabase.co';           // e.g. https://xyzabc.supabase.co
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljbGpsb3ljZ253dnRhcWJxbWNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNTgxMTIsImV4cCI6MjA4ODgzNDExMn0.PboNelvxZbHG3nxEpBpzl4FmvVHT_8R5tIK9lWWL_KI'; // Long JWT key from Supabase dashboard
 // ──────────────────────────────────────────────────────────────
 
 let supabase = null;
