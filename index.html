@@ -1347,6 +1347,7 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
 </div>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
 // ═══════════════════════════════════════════════
 //  STATE & DATA
 // ═══════════════════════════════════════════════
@@ -1496,30 +1497,34 @@ function selectAva(a,btn){
 function obNext(step){
   if(step===1){
     const n=document.getElementById('obName').value.trim();
-    if(!n){showToast('⚠️','Enter your name','A name is required to continue');return;}
+    if(!n){
+      const inp=document.getElementById('obName');
+      inp.style.borderColor='#ef4444';
+      inp.placeholder='Please enter your name first...';
+      inp.focus();
+      setTimeout(()=>{inp.style.borderColor='';inp.placeholder='Enter your name...';},2000);
+      return;
+    }
     userName=n;
-    document.getElementById('obFinalName').textContent=n;
+    const fn=document.getElementById('obFinalName');
+    if(fn) fn.textContent=n;
   }
   document.querySelectorAll('.ob-step').forEach((s,i)=>{s.classList.toggle('active',i===step);});
   document.querySelectorAll('.ob-dot').forEach((d,i)=>{d.classList.toggle('active',i<=step);});
 }
 function startApp(){
   userAvatar=obAvatar;
+  if(!userName||userName==='Champion'){
+    const n=document.getElementById('obName')?.value.trim();
+    if(n) userName=n;
+  }
   localStorage.setItem('lu_user',JSON.stringify({userName,userAvatar,xp,coins,level,streak}));
   document.getElementById('onboardScreen').style.display='none';
   document.getElementById('appShell').style.display='';
   renderAll();
 }
-initOnboard();
 
-// Load user if exists
-const savedUser=JSON.parse(localStorage.getItem('lu_user')||'null');
-if(savedUser){
-  ({userName,userAvatar,xp,coins,level,streak}=savedUser);
-  document.getElementById('onboardScreen').style.display='none';
-  document.getElementById('appShell').style.display='';
-  setTimeout(renderAll,50);
-}
+// NOTE: initOnboard() and savedUser check are called at the very bottom after all functions are defined
 
 // ═══════════════════════════════════════════════
 //  THEME
@@ -1533,9 +1538,6 @@ function setTheme(t){
   localStorage.setItem('lu_theme',t);
 }
 function toggleTheme(){setTheme(currentTheme==='dark'?'light':'dark');}
-const savedTheme=localStorage.getItem('lu_theme');
-if(savedTheme) setTheme(savedTheme);
-else setTheme('dark');
 
 // ═══════════════════════════════════════════════
 //  i18n
@@ -1841,8 +1843,6 @@ function setLang(code, btn){
   renderAll();
   showToast('🌐', 'Language changed', L.settings||'Settings updated');
 }
-const savedLang = localStorage.getItem('lu_lang');
-if(savedLang && I18N[savedLang]) { currentLang=savedLang; document.documentElement.dir=I18N[savedLang].dir; }
 
 // ═══════════════════════════════════════════════
 //  VIEW ROUTING
@@ -2972,25 +2972,48 @@ function showToast(icon,t1,t2){
 }
 
 // ═══════════════════════════════════════════════
-//  INITIAL RENDER//  INIT
+//  BOOT — runs after ALL functions are defined
 // ═══════════════════════════════════════════════
-// Set today's date in finance tx input
-document.addEventListener('DOMContentLoaded', ()=>{
-  const txDate = document.getElementById('txDate');
-  if(txDate) txDate.value = new Date().toISOString().split('T')[0];
+
+// Apply saved theme first (no flash)
+const savedThemeOnBoot = localStorage.getItem('lu_theme');
+if(savedThemeOnBoot) setTheme(savedThemeOnBoot);
+else setTheme('dark');
+
+// Apply saved language direction
+const savedLangOnBoot = localStorage.getItem('lu_lang');
+if(savedLangOnBoot && I18N[savedLangOnBoot]){
+  currentLang = savedLangOnBoot;
+  document.documentElement.dir = I18N[savedLangOnBoot].dir;
+}
+
+// Init onboarding avatar grid
+initOnboard();
+
+// Allow Enter key on name input
+document.getElementById('obName').addEventListener('keydown', function(e){
+  if(e.key === 'Enter') obNext(1);
 });
 
-// Apply saved language direction immediately
-if(savedLang && I18N[savedLang]){
-  document.documentElement.dir = I18N[savedLang].dir;
-  currentLang = savedLang;
-}
+// Set today's date in finance tx input
+const txDateEl = document.getElementById('txDate');
+if(txDateEl) txDateEl.value = new Date().toISOString().split('T')[0];
 
-// Kick off i18n on load if language was saved
-if(savedLang && savedLang !== 'en'){
-  setTimeout(()=>setLang(savedLang), 100);
+// Check if user already set up — skip onboarding
+const savedUserData = JSON.parse(localStorage.getItem('lu_user') || 'null');
+if(savedUserData && savedUserData.userName && savedUserData.userName !== 'Champion'){
+  ({userName, userAvatar, xp, coins, level, streak} = savedUserData);
+  document.getElementById('onboardScreen').style.display = 'none';
+  document.getElementById('appShell').style.display = '';
+  // Apply saved language after app is shown
+  if(savedLangOnBoot && savedLangOnBoot !== 'en'){
+    setTimeout(() => setLang(savedLangOnBoot), 80);
+  }
+  renderAll();
 }
+// else: onboarding screen stays visible (default)
 
+}); // end DOMContentLoaded
 </script>
 </body>
 </html>
