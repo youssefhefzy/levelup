@@ -1463,49 +1463,6 @@ function saveCustomCats(){localStorage.setItem('lu_customcats',JSON.stringify(CU
 //  ONBOARDING
 // ═══════════════════════════════════════════════
 const AVATARS=['🧠','💪','🔥','⚡','🌟','🏆','🎯','🚀','🦁','🐺','🦅','🌙'];
-let obAvatar='🧠';
-
-function initOnboard(){
-  const ag=document.getElementById('avGrid');
-  ag.innerHTML=AVATARS.map(a=>`<button class="av-opt ${a===obAvatar?'selected':''}" onclick="selectAva('${a}',this)">${a}</button>`).join('');
-}
-function selectAva(a,btn){
-  obAvatar=a;
-  document.querySelectorAll('.av-opt').forEach(b=>b.classList.remove('selected'));
-  btn.classList.add('active');btn.classList.add('selected');
-  document.getElementById('obFinalAva').textContent=a;
-}
-function obNext(step){
-  if(step===1){
-    const n=document.getElementById('obName').value.trim();
-    if(!n){
-      const inp=document.getElementById('obName');
-      inp.style.borderColor='#ef4444';
-      inp.placeholder='Please enter your name first...';
-      inp.focus();
-      setTimeout(()=>{inp.style.borderColor='';inp.placeholder='Enter your name...';},2000);
-      return;
-    }
-    userName=n;
-    const fn=document.getElementById('obFinalName');
-    if(fn) fn.textContent=n;
-  }
-  document.querySelectorAll('.ob-step').forEach((s,i)=>{s.classList.toggle('active',i===step);});
-  document.querySelectorAll('.ob-dot').forEach((d,i)=>{d.classList.toggle('active',i<=step);});
-}
-function startApp(){
-  userAvatar=obAvatar;
-  if(!userName||userName==='Champion'){
-    const n=document.getElementById('obName')?.value.trim();
-    if(n) userName=n;
-  }
-  localStorage.setItem('lu_user',JSON.stringify({userName,userAvatar,xp,coins,level,streak}));
-  document.getElementById('onboardScreen').style.display='none';
-  document.getElementById('appShell').style.display='';
-  renderAll();
-}
-
-// NOTE: initOnboard() and savedUser check are called at the very bottom after all functions are defined
 
 // ═══════════════════════════════════════════════
 //  THEME
