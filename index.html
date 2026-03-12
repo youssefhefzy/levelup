@@ -110,8 +110,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:11px 2
 .si{font-size:.95rem;width:18px;text-align:center;flex-shrink:0;}
 .sb-badge{margin-left:auto;background:rgba(124,58,237,.15);color:#7c3aed;font-size:.6rem;font-weight:800;padding:2px 6px;border-radius:100px;}
 .sb-badge.new{background:rgba(239,68,68,.12);color:#ef4444;}
-.sb-drag-handle{cursor:grab;color:var(--muted);font-size:.7rem;opacity:0;transition:opacity .2s;}
-.sb-item:hover .sb-drag-handle{opacity:.5;}
 
 /* ═══════════════════════════════════════
    MAIN / VIEWS
@@ -209,7 +207,6 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
 .lc-chip{font-size:.6rem;font-weight:600;padding:2px 7px;border-radius:100px;border:1px solid currentColor;opacity:.7;}
 .lc-foot{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;border-top:1px solid var(--border);font-size:.65rem;}
 .lc-xp{font-weight:700;}
-/* edit/delete overlays */
 .lc-actions{position:absolute;top:8px;right:8px;display:flex;gap:4px;opacity:0;transition:opacity .2s;}
 .lc:hover .lc-actions{opacity:1;}
 .lc-action-btn{width:24px;height:24px;border-radius:6px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-family:var(--fb);}
@@ -248,8 +245,6 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
 .task-row-actions{display:flex;gap:4px;opacity:0;transition:opacity .2s;}
 .task-row:hover .task-row-actions{opacity:1;}
 .tr-act-btn{width:22px;height:22px;border-radius:6px;border:none;cursor:pointer;font-size:.65rem;display:flex;align-items:center;justify-content:center;font-family:var(--fb);}
-
-/* drag handle */
 .drag-handle{cursor:grab;color:var(--muted);font-size:.8rem;opacity:0;transition:opacity .2s;user-select:none;}
 .task-row:hover .drag-handle{opacity:.6;}
 .task-row.dragging{opacity:.4;background:var(--s2);}
@@ -297,7 +292,6 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
 .fin-tab.active{background:rgba(22,163,74,.12);border-color:rgba(22,163,74,.3);color:#16a34a;}
 .fin-tab-content{display:none;}
 .fin-tab-content.active{display:block;}
-/* Expense log */
 .exp-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);}
 .exp-row:last-child{border-bottom:none;}
 .exp-cat-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
@@ -310,7 +304,6 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
 .exp-amount.saving{color:#60a5fa;}
 .exp-del{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.7rem;padding:3px 6px;border-radius:4px;transition:var(--transition);}
 .exp-del:hover{color:#ef4444;}
-/* Wishlist */
 .wish-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);}
 .wish-item:last-child{border-bottom:none;}
 .wish-icon{font-size:1.3rem;flex-shrink:0;}
@@ -323,7 +316,6 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
 .wish-pct{font-size:.62rem;color:var(--muted2);flex-shrink:0;}
 .wish-del{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.7rem;padding:3px 6px;border-radius:4px;}
 .wish-del:hover{color:#ef4444;}
-/* budget bars */
 .budget-cat{margin-bottom:12px;}
 .bc-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;}
 .bc-name{font-size:.77rem;font-weight:600;color:var(--text);}
@@ -336,22 +328,6 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
 ═══════════════════════════════════════ */
 .quit-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px;transition:var(--transition);}
 .quit-card:hover{border-color:var(--border2);}
-.quit-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
-.quit-icon{font-size:1.6rem;}
-.quit-title{font-size:.88rem;font-weight:700;color:var(--text);}
-.quit-sub{font-size:.68rem;color:var(--muted2);margin-top:2px;}
-.quit-counter{text-align:center;margin:12px 0;}
-.qc-days{font-family:var(--fh);font-size:2.4rem;font-weight:900;color:#db2777;}
-.qc-label{font-size:.7rem;color:var(--muted2);margin-top:2px;}
-.quit-milestones{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
-.qm{padding:4px 10px;border-radius:100px;font-size:.62rem;font-weight:700;}
-.qm.reached{background:rgba(219,39,119,.12);color:#db2777;border:1px solid rgba(219,39,119,.2);}
-.qm.pending{background:var(--s1);color:var(--muted);border:1px solid var(--border);}
-.quit-actions{display:flex;gap:8px;}
-.quit-slip-btn{flex:1;padding:8px;border-radius:9px;border:1px solid rgba(239,68,68,.2);background:rgba(239,68,68,.08);color:#ef4444;font-size:.75rem;font-weight:700;cursor:pointer;font-family:var(--fb);transition:var(--transition);}
-.quit-slip-btn:hover{background:rgba(239,68,68,.15);}
-.quit-journal-btn{flex:1;padding:8px;border-radius:9px;border:1px solid rgba(124,58,237,.2);background:rgba(124,58,237,.08);color:#7c3aed;font-size:.75rem;font-weight:700;cursor:pointer;font-family:var(--fb);transition:var(--transition);}
-.quit-journal-btn:hover{background:rgba(124,58,237,.15);}
 .quit-tip{background:rgba(219,39,119,.06);border-left:3px solid #db2777;border-radius:0 8px 8px 0;padding:8px 12px;font-size:.72rem;color:var(--muted2);line-height:1.6;margin-top:8px;}
 
 /* ═══════════════════════════════════════
@@ -543,21 +519,11 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
 .po-sub{font-size:.65rem;color:var(--muted2);margin-top:1px;}
 
 /* ═══════════════════════════════════════
-   ONBOARDING
+   ONBOARDING / AVATAR GRID
 ═══════════════════════════════════════ */
-#onboardScreen{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;}
-.onboard-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:24px;padding:32px;max-width:440px;width:100%;text-align:center;}
-.ob-logo{font-family:var(--fh);font-size:1.2rem;font-weight:900;margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:10px;}
-.ob-step{display:none;}
-.ob-step.active{display:block;}
-.ob-title{font-family:var(--fh);font-size:1.3rem;font-weight:900;margin-bottom:8px;letter-spacing:-.03em;}
-.ob-sub{font-size:.82rem;color:var(--muted2);margin-bottom:22px;line-height:1.6;}
 .avatar-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:20px;}
 .av-opt{width:100%;aspect-ratio:1;border-radius:10px;border:2px solid var(--border);background:var(--s2);font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);}
 .av-opt.selected{border-color:#7c3aed;background:rgba(124,58,237,.1);}
-.ob-dots{display:flex;justify-content:center;gap:5px;margin-top:18px;}
-.ob-dot{width:6px;height:6px;border-radius:50%;background:var(--border2);transition:var(--transition);}
-.ob-dot.active{background:#7c3aed;width:18px;border-radius:100px;}
 
 /* ═══════════════════════════════════════
    TOAST
@@ -568,6 +534,13 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
 .ti{width:34px;height:34px;background:rgba(124,58,237,.15);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
 .tt1{font-size:.82rem;font-weight:700;color:var(--text);}
 .tt2{font-size:.7rem;color:var(--muted2);}
+
+/* PWA install banner */
+#pwaInstallBanner{display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border-radius:14px;padding:12px 20px;box-shadow:0 8px 30px rgba(124,58,237,.35);z-index:8999;align-items:center;gap:12px;max-width:380px;width:calc(100% - 48px);}
+#pwaInstallBanner.show{display:flex;}
+.pwa-install-btn{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:7px 14px;font-size:.75rem;font-weight:700;cursor:pointer;font-family:var(--fb);white-space:nowrap;}
+.pwa-install-btn:hover{background:rgba(255,255,255,.3);}
+.pwa-dismiss-btn{background:none;border:none;color:rgba(255,255,255,.6);cursor:pointer;font-size:.85rem;padding:4px;}
 
 /* ═══════════════════════════════════════
    RESPONSIVE
@@ -589,15 +562,12 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:100px;}
 
-/* ═══════════════════════════════════════
-   DRAG SORT
-═══════════════════════════════════════ */
+/* DRAG SORT */
 .drag-over{border:2px dashed rgba(124,58,237,.4)!important;background:rgba(124,58,237,.04)!important;}
 </style>
 </head>
 <body>
 
-<!-- ═══ APP ═══ -->
 <div id="appShell">
 
   <nav>
@@ -622,11 +592,11 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
   <div class="shell">
     <aside class="sidebar" id="sidebar">
       <div class="sb-section" data-i18n="home">Home</div>
-      <button class="sb-item active" onclick="goView('dashboard',this)" id="sbDash">
+      <button class="sb-item active" id="sbDash" onclick="goView('dashboard',this)">
         <span class="si">🏠</span> <span data-i18n="dashboard">Dashboard</span>
         <span class="sb-badge" id="todayBadge">8</span>
       </button>
-      <button class="sb-item" onclick="goView('today',this)" id="sbToday">
+      <button class="sb-item" id="sbToday" onclick="goView('today',this)">
         <span class="si">✅</span> <span data-i18n="today">Today</span>
       </button>
       <button class="sb-item" onclick="goView('lifewheel',this)">
@@ -681,26 +651,30 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
       <div class="view active" id="view-dashboard">
         <div class="ph">
           <h1 id="dashGreet">Good morning 👋</h1>
-          <p id="dashDate">Wednesday, March 11, 2026</p>
+          <p id="dashDate">Thursday, March 12, 2026</p>
         </div>
-      <!-- WELCOME SETUP (first visit) -->
-      <div id="welcomeBanner" style="display:none;background:linear-gradient(135deg,#1a103a,#0c1a3a);border:1px solid rgba(124,58,237,.25);border-radius:18px;padding:22px 24px;margin-bottom:20px;position:relative;overflow:hidden;">
-        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(124,58,237,.15),transparent 60%);pointer-events:none"></div>
-        <div style="font-family:var(--fh);font-size:1rem;font-weight:900;color:#fff;margin-bottom:6px">⚡ Welcome to LevelUp!</div>
-        <div style="font-size:.8rem;color:rgba(167,139,250,.7);margin-bottom:16px">Your personal Life OS. Set your name to get started.</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <input id="quickNameInput" placeholder="Enter your name..." style="flex:1;min-width:160px;background:rgba(255,255,255,.08);border:1px solid rgba(124,58,237,.3);color:#fff">
-          <div style="display:flex;gap:6px;flex-wrap:wrap" id="quickAvaRow">
-            <button onclick="setQuickAva('🧠',this)" style="font-size:1.4rem;background:rgba(124,58,237,.2);border:2px solid #7c3aed;border-radius:10px;padding:6px 10px;cursor:pointer">🧠</button>
-            <button onclick="setQuickAva('💪',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">💪</button>
-            <button onclick="setQuickAva('🔥',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🔥</button>
-            <button onclick="setQuickAva('🚀',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🚀</button>
-            <button onclick="setQuickAva('🏆',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🏆</button>
-            <button onclick="setQuickAva('🦁',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🦁</button>
+
+        <!-- WELCOME BANNER (first visit) -->
+        <div id="welcomeBanner" style="display:none;background:linear-gradient(135deg,#1a103a,#0c1a3a);border:1px solid rgba(124,58,237,.25);border-radius:18px;padding:22px 24px;margin-bottom:20px;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(124,58,237,.15),transparent 60%);pointer-events:none"></div>
+          <div style="font-family:var(--fh);font-size:1rem;font-weight:900;color:#fff;margin-bottom:6px">⚡ Welcome to LevelUp!</div>
+          <div style="font-size:.8rem;color:rgba(167,139,250,.7);margin-bottom:16px">Your personal Life OS. Set your name to get started.</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <input id="quickNameInput" placeholder="Enter your name..." style="flex:1;min-width:160px;background:rgba(255,255,255,.08);border:1px solid rgba(124,58,237,.3);color:#fff">
+            <div style="display:flex;gap:6px;flex-wrap:wrap" id="quickAvaRow">
+              <button onclick="setQuickAva('🧠',this)" style="font-size:1.4rem;background:rgba(124,58,237,.2);border:2px solid #7c3aed;border-radius:10px;padding:6px 10px;cursor:pointer">🧠</button>
+              <button onclick="setQuickAva('💪',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">💪</button>
+              <button onclick="setQuickAva('🔥',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🔥</button>
+              <button onclick="setQuickAva('🚀',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🚀</button>
+              <button onclick="setQuickAva('🏆',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🏆</button>
+              <button onclick="setQuickAva('🦁',this)" style="font-size:1.4rem;background:rgba(255,255,255,.06);border:2px solid transparent;border-radius:10px;padding:6px 10px;cursor:pointer">🦁</button>
+            </div>
+            <button onclick="saveWelcome()" style="padding:10px 22px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border:none;border-radius:10px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:var(--fb);white-space:nowrap">Let's Go ⚡</button>
           </div>
-          <button onclick="saveWelcome()" style="padding:10px 22px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border:none;border-radius:10px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:var(--fb);white-space:nowrap">Let's Go ⚡</button>
         </div>
-      </div>
+
+        <!-- XP HERO — FIXED: now properly inside view-dashboard -->
+        <div class="xp-hero">
           <div class="xp-hero-top">
             <div>
               <div class="xp-lv" id="heroLevel">LEVEL 12 · MIND ARCHITECT</div>
@@ -751,11 +725,9 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
         <div class="slabel" data-i18n="lifeCategories">Life Categories</div>
         <div class="life-grid" id="dashLifeGrid"></div>
 
-        <!-- DAILY HABITS LIST -->
         <div class="slabel" data-i18n="todayHabits">Today's Habits</div>
         <div id="dashHabitsList"></div>
 
-        <!-- ONE-TIME TASKS -->
         <div class="onetask-section">
           <div class="onetask-title">⚡ <span data-i18n="quickTasks">Quick Tasks</span></div>
           <div class="onetask-add">
@@ -901,8 +873,6 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
             <button class="btn-ghost" onclick="cancelEdit()" id="cancelEditBtn" style="display:none" data-i18n="cancel">Cancel</button>
           </div>
         </div>
-
-        <!-- MANAGE CATEGORIES -->
         <div class="card card-pad" style="margin-bottom:16px">
           <div class="slabel" data-i18n="manageCategories">Manage Categories & Goals</div>
           <div id="manageCatList"></div>
@@ -915,8 +885,6 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
           <h1 data-i18n="financeTracker">💳 Finance Tracker</h1>
           <p data-i18n="financeTrackerSub">Track your money — salary, expenses, savings, and wishlist.</p>
         </div>
-
-        <!-- BALANCE HERO -->
         <div class="fin-hero">
           <div class="fin-balance-label" data-i18n="currentBalance">CURRENT BALANCE</div>
           <div class="fin-balance" id="finBalance">$0.00</div>
@@ -926,7 +894,6 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
             <div class="fin-stat"><div class="fin-stat-v fin-stat-savings" id="finSavings">$0</div><div class="fin-stat-l" data-i18n="totalSavings">Total Savings</div></div>
           </div>
         </div>
-
         <div class="fin-tabs">
           <button class="fin-tab active" onclick="switchFinTab('overview',this)" data-i18n="overview">📊 Overview</button>
           <button class="fin-tab" onclick="switchFinTab('log',this)" data-i18n="logExpense">📝 Log</button>
@@ -934,8 +901,6 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
           <button class="fin-tab" onclick="switchFinTab('wishlist',this)" data-i18n="wishlist">🛒 Wishlist</button>
           <button class="fin-tab" onclick="switchFinTab('setup',this)" data-i18n="setup">⚙️ Setup</button>
         </div>
-
-        <!-- OVERVIEW -->
         <div class="fin-tab-content active" id="fintab-overview">
           <div class="card card-pad" style="margin-bottom:14px">
             <div class="slabel" data-i18n="spendingByCategory">Spending by Category</div>
@@ -946,30 +911,13 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
             <div id="finRecentList"></div>
           </div>
         </div>
-
-        <!-- LOG -->
         <div class="fin-tab-content" id="fintab-log">
           <div class="card card-pad" style="margin-bottom:14px">
             <div class="slabel" data-i18n="addTransaction">Add Transaction</div>
             <div class="field-row-3">
-              <div class="field-group">
-                <label data-i18n="type">Type</label>
-                <select id="txType">
-                  <option value="expense">💸 Expense</option>
-                  <option value="income">💰 Income</option>
-                  <option value="saving">💙 Saving</option>
-                </select>
-              </div>
+              <div class="field-group"><label data-i18n="type">Type</label><select id="txType"><option value="expense">💸 Expense</option><option value="income">💰 Income</option><option value="saving">💙 Saving</option></select></div>
               <div class="field-group"><label data-i18n="amount">Amount</label><input id="txAmount" type="number" placeholder="0.00" min="0"></div>
-              <div class="field-group"><label data-i18n="category">Category</label>
-                <select id="txCat">
-                  <option value="food">🍔 Food</option><option value="transport">🚗 Transport</option>
-                  <option value="shopping">🛍️ Shopping</option><option value="bills">💡 Bills</option>
-                  <option value="health">🏥 Health</option><option value="entertainment">🎬 Entertainment</option>
-                  <option value="education">📚 Education</option><option value="salary">💼 Salary</option>
-                  <option value="freelance">💻 Freelance</option><option value="other">📦 Other</option>
-                </select>
-              </div>
+              <div class="field-group"><label data-i18n="category">Category</label><select id="txCat"><option value="food">🍔 Food</option><option value="transport">🚗 Transport</option><option value="shopping">🛍️ Shopping</option><option value="bills">💡 Bills</option><option value="health">🏥 Health</option><option value="entertainment">🎬 Entertainment</option><option value="education">📚 Education</option><option value="salary">💼 Salary</option><option value="freelance">💻 Freelance</option><option value="other">📦 Other</option></select></div>
             </div>
             <div class="field-row-2">
               <div class="field-group"><label data-i18n="description">Description</label><input id="txDesc" placeholder="e.g. Lunch at work"></div>
@@ -977,31 +925,19 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
             </div>
             <button class="btn-primary" onclick="addTransaction()" data-i18n="addTransaction">+ Add Transaction</button>
           </div>
-          <div class="card card-pad">
-            <div class="slabel" data-i18n="allTransactions">All Transactions</div>
-            <div id="finAllList"></div>
-          </div>
+          <div class="card card-pad"><div class="slabel" data-i18n="allTransactions">All Transactions</div><div id="finAllList"></div></div>
         </div>
-
-        <!-- BUDGET -->
         <div class="fin-tab-content" id="fintab-budget">
           <div class="card card-pad" style="margin-bottom:14px">
             <div class="slabel" data-i18n="monthlyBudget">Monthly Budget Limits</div>
             <div id="finBudgetList"></div>
             <div style="display:flex;gap:8px;margin-top:12px">
-              <select id="budgetCatSel" style="flex:1">
-                <option value="food">🍔 Food</option><option value="transport">🚗 Transport</option>
-                <option value="shopping">🛍️ Shopping</option><option value="bills">💡 Bills</option>
-                <option value="health">🏥 Health</option><option value="entertainment">🎬 Entertainment</option>
-                <option value="education">📚 Education</option><option value="other">📦 Other</option>
-              </select>
+              <select id="budgetCatSel" style="flex:1"><option value="food">🍔 Food</option><option value="transport">🚗 Transport</option><option value="shopping">🛍️ Shopping</option><option value="bills">💡 Bills</option><option value="health">🏥 Health</option><option value="entertainment">🎬 Entertainment</option><option value="education">📚 Education</option><option value="other">📦 Other</option></select>
               <input id="budgetAmt" type="number" placeholder="Budget amount" style="flex:1">
               <button class="btn-primary" onclick="setBudget()" style="white-space:nowrap">Set Budget</button>
             </div>
           </div>
         </div>
-
-        <!-- WISHLIST -->
         <div class="fin-tab-content" id="fintab-wishlist">
           <div class="card card-pad" style="margin-bottom:14px">
             <div class="slabel" data-i18n="addWishItem">Add to Wishlist</div>
@@ -1012,33 +948,18 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
             </div>
             <button class="btn-primary" onclick="addWishItem()" data-i18n="addItem">+ Add Item</button>
           </div>
-          <div class="card card-pad">
-            <div class="slabel" data-i18n="wishlist">Wishlist</div>
-            <div id="finWishList"></div>
-          </div>
+          <div class="card card-pad"><div class="slabel" data-i18n="wishlist">Wishlist</div><div id="finWishList"></div></div>
         </div>
-
-        <!-- SETUP -->
         <div class="fin-tab-content" id="fintab-setup">
           <div class="card card-pad" style="margin-bottom:14px">
             <div class="slabel" data-i18n="financialSetup">Financial Setup</div>
             <div class="field-row-2">
-              <div class="field-group"><label data-i18n="currency">Currency</label>
-                <select id="finCurrency" onchange="saveFinSetup()">
-                  <option value="$">$ USD</option><option value="€">€ EUR</option>
-                  <option value="£">£ GBP</option><option value="﷼">﷼ SAR</option>
-                  <option value="EGP">EGP</option><option value="AED">AED</option>
-                  <option value="€">€ EUR</option>
-                </select>
-              </div>
+              <div class="field-group"><label data-i18n="currency">Currency</label><select id="finCurrency" onchange="saveFinSetup()"><option value="$">$ USD</option><option value="€">€ EUR</option><option value="£">£ GBP</option><option value="﷼">﷼ SAR</option><option value="EGP">EGP</option><option value="AED">AED</option></select></div>
               <div class="field-group"><label data-i18n="monthlySalary">Monthly Salary</label><input id="finSalaryInput" type="number" placeholder="0" onchange="saveFinSetup()"></div>
             </div>
             <div class="field-row-2">
               <div class="field-group"><label data-i18n="currentBalance">Current Balance</label><input id="finBalanceInput" type="number" placeholder="0" onchange="saveFinSetup()"></div>
               <div class="field-group"><label data-i18n="savingsGoal">Monthly Savings Goal</label><input id="finSavingsGoal" type="number" placeholder="0" onchange="saveFinSetup()"></div>
-            </div>
-            <div style="margin-top:10px;padding:10px 14px;background:rgba(22,163,74,.06);border:1px solid rgba(22,163,74,.12);border-radius:10px;font-size:.75rem;color:var(--muted2)">
-              ✅ <strong>Connected to journal:</strong> When you log expenses, you'll see financial entries in your journal automatically.
             </div>
           </div>
         </div>
@@ -1053,16 +974,16 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
         <div class="card card-pad" style="margin-bottom:14px">
           <div class="slabel" data-i18n="todayEntry">Today's Entry</div>
           <div class="journal-moods" id="moodPicker">
-            <button class="mood-btn" onclick="selectMood('😊',this)" title="Happy">😊</button>
-            <button class="mood-btn" onclick="selectMood('😤',this)" title="Motivated">😤</button>
-            <button class="mood-btn" onclick="selectMood('😌',this)" title="Calm">😌</button>
-            <button class="mood-btn" onclick="selectMood('😔',this)" title="Sad">😔</button>
-            <button class="mood-btn" onclick="selectMood('😫',this)" title="Exhausted">😫</button>
-            <button class="mood-btn" onclick="selectMood('😡',this)" title="Frustrated">😡</button>
-            <button class="mood-btn" onclick="selectMood('🥳',this)" title="Excited">🥳</button>
-            <button class="mood-btn" onclick="selectMood('🧘',this)" title="Mindful">🧘</button>
+            <button class="mood-btn" onclick="selectMood('😊',this)">😊</button>
+            <button class="mood-btn" onclick="selectMood('😤',this)">😤</button>
+            <button class="mood-btn" onclick="selectMood('😌',this)">😌</button>
+            <button class="mood-btn" onclick="selectMood('😔',this)">😔</button>
+            <button class="mood-btn" onclick="selectMood('😫',this)">😫</button>
+            <button class="mood-btn" onclick="selectMood('😡',this)">😡</button>
+            <button class="mood-btn" onclick="selectMood('🥳',this)">🥳</button>
+            <button class="mood-btn" onclick="selectMood('🧘',this)">🧘</button>
           </div>
-          <textarea id="journalText" rows="4" placeholder="How was your day? What habits did you complete? What's on your mind?..." style="margin-bottom:10px;resize:vertical;line-height:1.7"></textarea>
+          <textarea id="journalText" rows="4" placeholder="How was your day? What habits did you complete?" style="margin-bottom:10px;resize:vertical;line-height:1.7"></textarea>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
             <input id="journalTag" placeholder="Add tag (press Enter)..." style="flex:1;min-width:140px" onkeydown="if(event.key==='Enter'){addJournalTag();event.preventDefault()}">
             <div id="journalTagsPreview" style="display:flex;gap:5px;flex-wrap:wrap"></div>
@@ -1328,15 +1249,23 @@ label{font-size:.72rem;font-weight:700;color:var(--muted2);display:block;margin-
   <div><div class="tt1" id="tT1">Done!</div><div class="tt2" id="tT2">+25 XP</div></div>
 </div>
 
+<!-- PWA INSTALL BANNER -->
+<div id="pwaInstallBanner">
+  <span style="font-size:1.3rem">📲</span>
+  <div style="flex:1">
+    <div style="font-size:.82rem;font-weight:700">Install LevelUp</div>
+    <div style="font-size:.7rem;opacity:.8">Add to your home screen for the best experience</div>
+  </div>
+  <button class="pwa-install-btn" id="pwaInstallBtn">Install</button>
+  <button class="pwa-dismiss-btn" id="pwaDismissBtn">✕</button>
+</div>
+
 <script>
 // ═══════════════════════════════════════════════
 //  STATE & DATA
 // ═══════════════════════════════════════════════
-
-// User state
 let xp=3240, coins=324, level=12, streak=14, userName='Champion', userAvatar='🧠', currentLang='en', currentTheme='dark', scorePeriod='daily';
 
-// Goals data (persisted in localStorage)
 const DEFAULT_GOALS=[
   {id:1,name:'Read 30 min',cat:'mental',sub:'Books & Learning',xp:20,diff:'medium',imp:'high',freq:'Daily',type:'Build new habit'},
   {id:2,name:'Meditate 10 min',cat:'mental',sub:'Mindfulness',xp:15,diff:'easy',imp:'high',freq:'Daily',type:'Build new habit'},
@@ -1356,29 +1285,16 @@ let GOALS = JSON.parse(localStorage.getItem('lu_goals')||'null') || DEFAULT_GOAL
 let goalNextId = Math.max(...GOALS.map(g=>g.id), 0) + 1;
 let taskDone = JSON.parse(localStorage.getItem('lu_taskdone')||'{}');
 let catOrder = JSON.parse(localStorage.getItem('lu_catorder')||'null') || ['mental','physical','spiritual','productivity','quit','financial','social','maintenance','custom'];
-
-// Custom categories
 let CUSTOM_CATS = JSON.parse(localStorage.getItem('lu_customcats')||'[]');
-// {id, name, icon, color, desc}
-
-// Journal entries
 let JOURNAL = JSON.parse(localStorage.getItem('lu_journal')||'[]');
 let journalMood = '😊';
 let journalTags = [];
-
-// One-time tasks
 let ONE_TASKS = JSON.parse(localStorage.getItem('lu_onetasks')||'[]');
 let otNextId = Math.max(...ONE_TASKS.map(t=>t.id), 0) + 1;
-
-// Finance
 let FINANCE = JSON.parse(localStorage.getItem('lu_finance')||JSON.stringify({
-  balance: 0, salary: 0, savingsGoal: 500, currency: '$',
-  transactions: [], wishlist: [], budgets: {}
+  balance:0, salary:0, savingsGoal:500, currency:'$', transactions:[], wishlist:[], budgets:{}
 }));
-
-// Quit habits — separate tracking
 let QUIT_DATA = JSON.parse(localStorage.getItem('lu_quit')||'{}');
-// {habitId: {startDate, slips: []}}
 
 // ═══════════════════════════════════════════════
 //  CAT META
@@ -1394,7 +1310,6 @@ const CAT_META_DEFAULT = {
   quit:{name:'Break Bad Habits',icon:'🚫',color:'#db2777',desc:'Quit smoking, reduce screen time'},
   custom:{name:'Custom',icon:'⚡',color:'#64748b',desc:'Your custom goals'},
 };
-
 const SUBS_DEFAULT = {
   mental:['Books & Learning','Mindfulness','Mental Health','Languages','Skills'],
   physical:['Strength Training','Cardio','Nutrition','Sleep','Recovery'],
@@ -1412,14 +1327,12 @@ function getCatMeta(catId){
   if(custom) return {name:custom.name,icon:custom.icon,color:custom.color,desc:custom.desc||''};
   return CAT_META_DEFAULT[catId]||{name:catId,icon:'⚡',color:'#64748b',desc:''};
 }
-
 function getAllCats(){
   const base = Object.keys(CAT_META_DEFAULT);
   const custom = CUSTOM_CATS.map(c=>c.id);
   const all = [...base,...custom];
-  // sort by catOrder
   return all.sort((a,b)=>{
-    const ia = catOrder.indexOf(a), ib = catOrder.indexOf(b);
+    const ia=catOrder.indexOf(a), ib=catOrder.indexOf(b);
     if(ia===-1&&ib===-1) return 0;
     if(ia===-1) return 1;
     if(ib===-1) return -1;
@@ -1440,7 +1353,6 @@ const LEVELS=[
   {lv:13,name:'Enlightened',xp:27000},{lv:14,name:'Ascendant',xp:34000},
   {lv:15,name:'Legend',xp:42000},
 ];
-
 function updateLevel(){
   const l=LEVELS.slice().reverse().find(l=>xp>=l.xp)||LEVELS[0];
   level=l.lv;
@@ -1458,11 +1370,61 @@ function saveFinance(){localStorage.setItem('lu_finance',JSON.stringify(FINANCE)
 function saveQuit(){localStorage.setItem('lu_quit',JSON.stringify(QUIT_DATA));}
 function saveCatOrder(){localStorage.setItem('lu_catorder',JSON.stringify(catOrder));}
 function saveCustomCats(){localStorage.setItem('lu_customcats',JSON.stringify(CUSTOM_CATS));}
+function saveUser(){localStorage.setItem('lu_user',JSON.stringify({userName,userAvatar,xp,coins,level,streak}));}
 
 // ═══════════════════════════════════════════════
-//  ONBOARDING
+//  ✅ FIX 1: VIEW ROUTING — completely rewritten
+//  The original had a structural HTML bug where the
+//  xp-hero div was placed OUTSIDE view-dashboard,
+//  causing the DOM to be malformed and breaking
+//  querySelectorAll('.view'). Now fixed.
 // ═══════════════════════════════════════════════
-const AVATARS=['🧠','💪','🔥','⚡','🌟','🏆','🎯','🚀','🦁','🐺','🦅','🌙'];
+function goView(id, btn) {
+  // Hide all views
+  document.querySelectorAll('.view').forEach(v => {
+    v.classList.remove('active');
+  });
+  // Remove active from all sidebar items
+  document.querySelectorAll('.sb-item').forEach(b => {
+    b.classList.remove('active');
+  });
+  // Show the target view
+  const targetView = document.getElementById('view-' + id);
+  if (targetView) {
+    targetView.classList.add('active');
+  }
+  // Highlight the clicked sidebar button
+  if (btn) {
+    btn.classList.add('active');
+  } else {
+    // Try to find and highlight by view id match
+    document.querySelectorAll('.sb-item').forEach(b => {
+      if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + id + "'")) {
+        b.classList.add('active');
+      }
+    });
+  }
+  // Scroll main back to top on navigation
+  const mainEl = document.querySelector('.main');
+  if (mainEl) mainEl.scrollTop = 0;
+  // Per-view render hooks
+  if (id === 'share') renderShareCard();
+  if (id === 'finance') renderFinance();
+  if (id === 'journal') renderJournal();
+  if (id === 'badges') renderBadges();
+  if (id === 'store') renderStore();
+  if (id === 'leaderboard') renderLeaderboard();
+  if (id === 'analytics') renderAnalytics();
+  if (id === 'challenges') renderChallenges();
+  if (id === 'lifewheel') { renderWheelGrid(); populateFilters(); }
+  if (id === 'add') renderManageCats();
+  if (id === 'dashboard' || id === 'today') {
+    renderToday();
+    renderDashGrid();
+    renderDashHabits();
+    renderOneTasks();
+  }
+}
 
 // ═══════════════════════════════════════════════
 //  THEME
@@ -1481,328 +1443,33 @@ function toggleTheme(){setTheme(currentTheme==='dark'?'light':'dark');}
 //  i18n
 // ═══════════════════════════════════════════════
 const I18N={
-  en:{
-    dir:'ltr',
-    home:'Home',build:'Build',progress:'Progress',rewards:'Rewards',account:'Account',money:'💰 Money',
-    dashboard:'Dashboard',today:'Today',lifeWheel:'Life Wheel',addGoal:'Add Goal',journal:'Journal',
-    challenges:'Challenges',analytics:'Analytics',badges:'Badges',store:'Store',leaderboard:'Leaderboard',
-    share:'Share Progress',settings:'Settings',financeTracker:'Finance Tracker',
-    settingsSub:'Personalize your LevelUp experience.',
-    language:'🌐 Language',languageSub:'App language changes instantly.',
-    theme:'🎨 Theme',themeSub:'Choose between dark and light mode.',
-    notifications:'🔔 Notifications',notificationsSub:'Control when LevelUp reminds you.',
-    privacy:'🛡️ Privacy',privacySub:'Manage your data and visibility.',
-    profile:'👤 Profile',profileSub:'Update your name and avatar.',
-    data:'💾 Data',dataSub:'Export or reset your data.',
-    filter:'Filter:',allCategories:'All Categories',allSubs:'All Subcategories',clear:'✕ Clear',
-    byCategory:'By Category',byDifficulty:'By Difficulty',byImportance:'By Importance',
-    daily:'Daily',weekly:'Weekly',monthly:'Monthly',yearly:'Yearly',
-    lifeScore:'Life Score',lifeCategories:'Life Categories',todayHabits:"Today's Habits",quickTasks:'Quick Tasks',add:'+ Add',
-    dayStreak:'Day Streak',coins:'Coins',todayDone:'Today Done',
-    todaysTasks:"Today's Tasks",
-    streakAtRisk:'Streak at risk!',streakAtRiskSub:'Use a Freeze to protect your streak.',
-    lifeWheelSub:'Click any category to explore. Drag to reorder.',
-    goalDetails:'Goal Details',goalName:'Goal Name',category:'Life Category',subcategory:'Subcategory',
-    goalType:'Goal Type',frequency:'Frequency',xpReward:'XP Reward',difficulty:'Difficulty',importance:'Importance',
-    saveGoal:'Save Goal ✦',cancel:'Cancel',manageCategories:'Manage Categories & Goals',
-    addGoalSub:'Build your custom life system.',
-    financeTrackerSub:'Track your money — salary, expenses, savings, and wishlist.',
-    currentBalance:'CURRENT BALANCE',monthIncome:'Month Income',monthSpent:'Month Spent',totalSavings:'Total Savings',
-    overview:'📊 Overview',logExpense:'📝 Log',budget:'📋 Budget',wishlist:'🛒 Wishlist',setup:'⚙️ Setup',
-    spendingByCategory:'Spending by Category',recentTransactions:'Recent Transactions',
-    addTransaction:'Add Transaction',type:'Type',amount:'Amount',description:'Description',date:'Date',
-    allTransactions:'All Transactions',monthlyBudget:'Monthly Budget Limits',
-    addWishItem:'Add to Wishlist',itemName:'Item Name',price:'Price',addItem:'+ Add Item',
-    financialSetup:'Financial Setup',currency:'Currency',monthlySalary:'Monthly Salary',
-    savingsGoal:'Monthly Savings Goal',
-    journalSub:'Daily reflections, habit logs, and quit habit progress.',
-    todayEntry:"Today's Entry",saveEntry:'Save Entry ✦',linkHabit:'🚫 Link Quit Habit',pastEntries:'Past Entries',
-    challengesSub:'Join global challenges and compete to level up.',
-    analyticsSub:'Your progress, visualized.',
-    daysActive:'Days Active',currentStreak:'Current Streak',tasksDone:'Tasks Done',completionRate:'Completion Rate',
-    heatmap:'30-Day Activity',categoryCompletion:'Category Completion',weeklyCompletion:'Weekly Completion',
-    futureSelf:'If you maintain current pace until end of 2026:',less:'Less',more:'More',
-    shareTo:'Share to',shareSub:'Show the world your growth journey.',
-    chooseSharing:'Choose What You Share',chooseSharingSub:'You decide what challenge participants can see.',
-    username:'Username',streakCount:'Streak Count',progressPct:'Progress %',
-    joinChallenge:'Join Challenge →',
-    global:'🌍 Global',
-    avatars:'👤 Avatars',themes:'🎨 Themes',effects:'✨ Effects',tools:'🔧 Tools',
-    storeSub:'Spend coins on cosmetics and power-ups.',
-    leaderboardSub:'Compete globally — your habits, ranked.',
-    yourName:'Your Name',saveProfile:'Save Profile',exportData:'📥 Export JSON',resetData:'⚠️ Reset All Data',
-    dailyReminder:'Daily Habit Reminders',streakAlert:'Streak at Risk Alert',weeklySummary:'Weekly Summary',
-    showLeaderboard:'Appear on Leaderboard',showStreak:'Show Streak Publicly',
-    addCategory:'Add Category',deleteCategory:'Delete Category',editCategory:'Edit Category',
-    deleteGoal:'Delete Goal',editGoal:'Edit Goal',
-  },
-  ar:{
-    dir:'rtl',
-    home:'الرئيسية',build:'البناء',progress:'التقدم',rewards:'المكافآت',account:'الحساب',money:'💰 المال',
-    dashboard:'لوحة التحكم',today:'اليوم',lifeWheel:'عجلة الحياة',addGoal:'إضافة هدف',journal:'اليوميات',
-    challenges:'التحديات',analytics:'التحليلات',badges:'الشارات',store:'المتجر',leaderboard:'المتصدرين',
-    share:'مشاركة التقدم',settings:'الإعدادات',financeTracker:'تتبع المالية',
-    settingsSub:'خصّص تجربتك في LevelUp.',
-    language:'🌐 اللغة',languageSub:'تتغير لغة التطبيق فوراً.',
-    theme:'🎨 المظهر',themeSub:'اختر بين الوضع الداكن والفاتح.',
-    notifications:'🔔 الإشعارات',notificationsSub:'تحكم في وقت التذكيرات.',
-    privacy:'🛡️ الخصوصية',privacySub:'إدارة بياناتك وظهورك.',
-    profile:'👤 الملف الشخصي',profileSub:'تحديث اسمك ورمزك.',
-    data:'💾 البيانات',dataSub:'تصدير أو إعادة تعيين البيانات.',
-    filter:'فلتر:',allCategories:'جميع الفئات',allSubs:'جميع التصنيفات',clear:'✕ مسح',
-    byCategory:'حسب الفئة',byDifficulty:'حسب الصعوبة',byImportance:'حسب الأهمية',
-    daily:'يومي',weekly:'أسبوعي',monthly:'شهري',yearly:'سنوي',
-    lifeScore:'مؤشر الحياة',lifeCategories:'فئات الحياة',todayHabits:'عادات اليوم',quickTasks:'مهام سريعة',add:'+ إضافة',
-    dayStreak:'أيام متتالية',coins:'عملات',todayDone:'منجز اليوم',
-    todaysTasks:'مهام اليوم',
-    streakAtRisk:'السلسلة في خطر!',streakAtRiskSub:'استخدم التجميد لحماية سلسلتك.',
-    lifeWheelSub:'انقر على أي فئة للاستكشاف. اسحب لإعادة الترتيب.',
-    goalDetails:'تفاصيل الهدف',goalName:'اسم الهدف',category:'فئة الحياة',subcategory:'التصنيف الفرعي',
-    goalType:'نوع الهدف',frequency:'التكرار',xpReward:'مكافأة XP',difficulty:'الصعوبة',importance:'الأهمية',
-    saveGoal:'حفظ الهدف ✦',cancel:'إلغاء',manageCategories:'إدارة الفئات والأهداف',
-    addGoalSub:'ابنِ نظام حياتك المخصص.',
-    financeTrackerSub:'تتبع أموالك — الراتب والمصروف والمدخرات وقائمة الأمنيات.',
-    currentBalance:'الرصيد الحالي',monthIncome:'دخل الشهر',monthSpent:'مصروف الشهر',totalSavings:'إجمالي المدخرات',
-    overview:'📊 نظرة عامة',logExpense:'📝 تسجيل',budget:'📋 الميزانية',wishlist:'🛒 قائمة الأمنيات',setup:'⚙️ الإعداد',
-    spendingByCategory:'الإنفاق حسب الفئة',recentTransactions:'المعاملات الأخيرة',
-    addTransaction:'إضافة معاملة',type:'النوع',amount:'المبلغ',description:'الوصف',date:'التاريخ',
-    allTransactions:'جميع المعاملات',monthlyBudget:'حدود الميزانية الشهرية',
-    addWishItem:'إضافة إلى قائمة الأمنيات',itemName:'اسم العنصر',price:'السعر',addItem:'+ إضافة',
-    financialSetup:'الإعداد المالي',currency:'العملة',monthlySalary:'الراتب الشهري',
-    savingsGoal:'هدف المدخرات الشهري',
-    journalSub:'تأملات يومية وسجل العادات وتقدم ترك العادات السيئة.',
-    todayEntry:'إدخال اليوم',saveEntry:'حفظ الإدخال ✦',linkHabit:'🚫 ربط بعادة يجب تركها',pastEntries:'الإدخالات السابقة',
-    challengesSub:'انضم إلى تحديات عالمية وتنافس للوصول إلى المستوى التالي.',
-    analyticsSub:'تقدمك مرئياً. كل نمط يحكي قصة.',
-    daysActive:'أيام نشطة',currentStreak:'السلسلة الحالية',tasksDone:'مهام منجزة',completionRate:'معدل الإنجاز',
-    heatmap:'نشاط 30 يوم',categoryCompletion:'إنجاز الفئات',weeklyCompletion:'الإنجاز الأسبوعي',
-    futureSelf:'إذا حافظت على وتيرتك الحالية حتى نهاية 2026:',less:'أقل',more:'أكثر',
-    shareTo:'مشاركة إلى',shareSub:'أظهر للعالم رحلتك في النمو.',
-    chooseSharing:'اختر ما تشاركه',chooseSharingSub:'أنت تقرر ما يراه المشاركون في التحديات.',
-    username:'اسم المستخدم',streakCount:'عدد الأيام المتتالية',progressPct:'نسبة التقدم %',
-    joinChallenge:'انضم للتحدي →',
-    global:'🌍 عالمي',
-    avatars:'👤 الرموز',themes:'🎨 المظاهر',effects:'✨ التأثيرات',tools:'🔧 الأدوات',
-    storeSub:'أنفق عملاتك على التخصيصات والقدرات.',
-    leaderboardSub:'تنافس عالمياً — عاداتك في تصنيف.',
-    yourName:'اسمك',saveProfile:'حفظ الملف الشخصي',exportData:'📥 تصدير JSON',resetData:'⚠️ إعادة تعيين البيانات',
-    dailyReminder:'تذكيرات العادات اليومية',streakAlert:'تنبيه السلسلة في خطر',weeklySummary:'ملخص أسبوعي',
-    showLeaderboard:'الظهور في قائمة المتصدرين',showStreak:'إظهار السلسلة علنياً',
-    addCategory:'إضافة فئة',deleteCategory:'حذف الفئة',editCategory:'تعديل الفئة',
-    deleteGoal:'حذف الهدف',editGoal:'تعديل الهدف',
-  },
-  fr:{
-    dir:'ltr',
-    home:'Accueil',build:'Construire',progress:'Progrès',rewards:'Récompenses',account:'Compte',money:'💰 Argent',
-    dashboard:'Tableau de bord',today:"Aujourd'hui",lifeWheel:'Roue de vie',addGoal:'Ajouter un objectif',journal:'Journal',
-    challenges:'Défis',analytics:'Analyses',badges:'Badges',store:'Boutique',leaderboard:'Classement',
-    share:'Partager',settings:'Paramètres',financeTracker:'Finances',
-    settingsSub:"Personnalisez votre expérience LevelUp.",
-    language:'🌐 Langue',languageSub:"La langue change instantanément.",
-    theme:'🎨 Thème',themeSub:'Choisissez entre mode sombre et clair.',
-    notifications:'🔔 Notifications',notificationsSub:'Gérez vos rappels.',
-    privacy:'🛡️ Confidentialité',privacySub:'Gérez vos données.',
-    profile:'👤 Profil',profileSub:'Mettez à jour votre nom et avatar.',
-    data:'💾 Données',dataSub:'Exportez ou réinitialisez vos données.',
-    filter:'Filtrer:',allCategories:'Toutes les catégories',allSubs:'Toutes les sous-catégories',clear:'✕ Effacer',
-    byCategory:'Par catégorie',byDifficulty:'Par difficulté',byImportance:'Par importance',
-    daily:'Quotidien',weekly:'Hebdomadaire',monthly:'Mensuel',yearly:'Annuel',
-    lifeScore:'Score de vie',lifeCategories:'Catégories',todayHabits:"Habitudes d'aujourd'hui",quickTasks:'Tâches rapides',add:'+ Ajouter',
-    dayStreak:'Jours consécutifs',coins:'Pièces',todayDone:'Fait aujourd\'hui',
-    todaysTasks:"Tâches d'aujourd'hui",
-    streakAtRisk:'Série en danger!',streakAtRiskSub:'Utilisez un Freeze pour protéger votre série.',
-    lifeWheelSub:'Cliquez pour explorer. Glissez pour réorganiser.',
-    goalDetails:"Détails de l'objectif",goalName:"Nom de l'objectif",category:'Catégorie',subcategory:'Sous-catégorie',
-    goalType:"Type d'objectif",frequency:'Fréquence',xpReward:'Récompense XP',difficulty:'Difficulté',importance:'Importance',
-    saveGoal:"Enregistrer l'objectif ✦",cancel:'Annuler',manageCategories:'Gérer les catégories et objectifs',
-    addGoalSub:'Construisez votre système de vie personnalisé.',
-    financeTrackerSub:'Suivez votre argent — salaire, dépenses, épargne.',
-    currentBalance:'SOLDE ACTUEL',monthIncome:'Revenus du mois',monthSpent:'Dépenses du mois',totalSavings:'Épargne totale',
-    overview:'📊 Vue générale',logExpense:'📝 Enregistrer',budget:'📋 Budget',wishlist:'🛒 Liste de souhaits',setup:'⚙️ Configuration',
-    spendingByCategory:'Dépenses par catégorie',recentTransactions:'Transactions récentes',
-    addTransaction:'Ajouter une transaction',type:'Type',amount:'Montant',description:'Description',date:'Date',
-    allTransactions:'Toutes les transactions',monthlyBudget:'Limites budgétaires mensuelles',
-    addWishItem:'Ajouter à la liste',itemName:"Nom de l'article",price:'Prix',addItem:'+ Ajouter',
-    financialSetup:'Configuration financière',currency:'Devise',monthlySalary:'Salaire mensuel',
-    savingsGoal:"Objectif d'épargne mensuel",
-    journalSub:'Réflexions quotidiennes et suivi des habitudes.',
-    todayEntry:"Entrée d'aujourd'hui",saveEntry:"Enregistrer l'entrée ✦",linkHabit:'🚫 Lier une habitude à quitter',pastEntries:'Entrées passées',
-    challengesSub:'Rejoignez des défis mondiaux.',
-    analyticsSub:'Vos progrès, visualisés.',
-    daysActive:'Jours actifs',currentStreak:'Série actuelle',tasksDone:'Tâches accomplies',completionRate:"Taux d'achèvement",
-    heatmap:'Activité 30 jours',categoryCompletion:'Taux par catégorie',weeklyCompletion:'Achèvement hebdomadaire',
-    futureSelf:"Si vous maintenez votre rythme jusqu'à fin 2026:",less:'Moins',more:'Plus',
-    shareTo:'Partager sur',shareSub:'Montrez votre progression au monde.',
-    chooseSharing:'Choisissez ce que vous partagez',chooseSharingSub:'Vous décidez ce que les participants voient.',
-    username:"Nom d'utilisateur",streakCount:'Nombre de jours consécutifs',progressPct:'Progression %',
-    joinChallenge:'Rejoindre le défi →',
-    global:'🌍 Mondial',
-    avatars:'👤 Avatars',themes:'🎨 Thèmes',effects:'✨ Effets',tools:'🔧 Outils',
-    storeSub:'Dépensez des pièces sur des cosmétiques.',
-    leaderboardSub:'Compétition mondiale — vos habitudes classées.',
-    yourName:'Votre nom',saveProfile:'Enregistrer le profil',exportData:'📥 Exporter JSON',resetData:'⚠️ Réinitialiser',
-    dailyReminder:'Rappels quotidiens',streakAlert:'Alerte série en danger',weeklySummary:'Résumé hebdomadaire',
-    showLeaderboard:'Apparaître dans le classement',showStreak:'Afficher la série publiquement',
-    addCategory:'Ajouter une catégorie',deleteCategory:'Supprimer la catégorie',editCategory:'Modifier la catégorie',
-    deleteGoal:"Supprimer l'objectif",editGoal:"Modifier l'objectif",
-  },
-  es:{
-    dir:'ltr',
-    home:'Inicio',build:'Construir',progress:'Progreso',rewards:'Recompensas',account:'Cuenta',money:'💰 Dinero',
-    dashboard:'Panel',today:'Hoy',lifeWheel:'Rueda de vida',addGoal:'Agregar objetivo',journal:'Diario',
-    challenges:'Desafíos',analytics:'Análisis',badges:'Insignias',store:'Tienda',leaderboard:'Clasificación',
-    share:'Compartir progreso',settings:'Configuración',financeTracker:'Finanzas',
-    settingsSub:'Personaliza tu experiencia en LevelUp.',
-    language:'🌐 Idioma',languageSub:'El idioma cambia instantáneamente.',
-    theme:'🎨 Tema',themeSub:'Elige entre modo oscuro y claro.',
-    notifications:'🔔 Notificaciones',notificationsSub:'Controla tus recordatorios.',
-    privacy:'🛡️ Privacidad',privacySub:'Gestiona tus datos.',
-    profile:'👤 Perfil',profileSub:'Actualiza tu nombre y avatar.',
-    data:'💾 Datos',dataSub:'Exporta o restablece tus datos.',
-    filter:'Filtrar:',allCategories:'Todas las categorías',allSubs:'Todas las subcategorías',clear:'✕ Limpiar',
-    byCategory:'Por categoría',byDifficulty:'Por dificultad',byImportance:'Por importancia',
-    daily:'Diario',weekly:'Semanal',monthly:'Mensual',yearly:'Anual',
-    lifeScore:'Puntuación de vida',lifeCategories:'Categorías de vida',todayHabits:'Hábitos de hoy',quickTasks:'Tareas rápidas',add:'+ Agregar',
-    dayStreak:'Días seguidos',coins:'Monedas',todayDone:'Completado hoy',
-    todaysTasks:'Tareas de hoy',
-    streakAtRisk:'¡Racha en riesgo!',streakAtRiskSub:'Usa un Congelamiento para proteger tu racha.',
-    lifeWheelSub:'Haz clic para explorar. Arrastra para reordenar.',
-    goalDetails:'Detalles del objetivo',goalName:'Nombre del objetivo',category:'Categoría de vida',subcategory:'Subcategoría',
-    goalType:'Tipo de objetivo',frequency:'Frecuencia',xpReward:'Recompensa XP',difficulty:'Dificultad',importance:'Importancia',
-    saveGoal:'Guardar objetivo ✦',cancel:'Cancelar',manageCategories:'Gestionar categorías y objetivos',
-    addGoalSub:'Construye tu sistema de vida personalizado.',
-    financeTrackerSub:'Rastrea tu dinero — salario, gastos, ahorros.',
-    currentBalance:'SALDO ACTUAL',monthIncome:'Ingresos del mes',monthSpent:'Gastos del mes',totalSavings:'Ahorros totales',
-    overview:'📊 Resumen',logExpense:'📝 Registrar',budget:'📋 Presupuesto',wishlist:'🛒 Lista de deseos',setup:'⚙️ Configuración',
-    spendingByCategory:'Gastos por categoría',recentTransactions:'Transacciones recientes',
-    addTransaction:'Agregar transacción',type:'Tipo',amount:'Monto',description:'Descripción',date:'Fecha',
-    allTransactions:'Todas las transacciones',monthlyBudget:'Límites de presupuesto mensual',
-    addWishItem:'Agregar a lista de deseos',itemName:'Nombre del artículo',price:'Precio',addItem:'+ Agregar',
-    financialSetup:'Configuración financiera',currency:'Moneda',monthlySalary:'Salario mensual',
-    savingsGoal:'Meta de ahorro mensual',
-    journalSub:'Reflexiones diarias y registro de hábitos.',
-    todayEntry:'Entrada de hoy',saveEntry:'Guardar entrada ✦',linkHabit:'🚫 Vincular hábito a dejar',pastEntries:'Entradas pasadas',
-    challengesSub:'Únete a desafíos globales y compite.',
-    analyticsSub:'Tu progreso, visualizado.',
-    daysActive:'Días activos',currentStreak:'Racha actual',tasksDone:'Tareas completadas',completionRate:'Tasa de completado',
-    heatmap:'Actividad 30 días',categoryCompletion:'Completado por categoría',weeklyCompletion:'Completado semanal',
-    futureSelf:'Si mantienes tu ritmo actual hasta fin de 2026:',less:'Menos',more:'Más',
-    shareTo:'Compartir en',shareSub:'Muestra tu viaje de crecimiento al mundo.',
-    chooseSharing:'Elige qué compartir',chooseSharingSub:'Tú decides qué ven los participantes.',
-    username:'Nombre de usuario',streakCount:'Días consecutivos',progressPct:'Progreso %',
-    joinChallenge:'Unirse al desafío →',
-    global:'🌍 Global',
-    avatars:'👤 Avatares',themes:'🎨 Temas',effects:'✨ Efectos',tools:'🔧 Herramientas',
-    storeSub:'Gasta monedas en cosméticos y potenciadores.',
-    leaderboardSub:'Compite globalmente — tus hábitos clasificados.',
-    yourName:'Tu nombre',saveProfile:'Guardar perfil',exportData:'📥 Exportar JSON',resetData:'⚠️ Restablecer todo',
-    dailyReminder:'Recordatorios de hábitos diarios',streakAlert:'Alerta de racha en riesgo',weeklySummary:'Resumen semanal',
-    showLeaderboard:'Aparecer en clasificación',showStreak:'Mostrar racha públicamente',
-    addCategory:'Agregar categoría',deleteCategory:'Eliminar categoría',editCategory:'Editar categoría',
-    deleteGoal:'Eliminar objetivo',editGoal:'Editar objetivo',
-  },
-  zh:{
-    dir:'ltr',
-    home:'首页',build:'构建',progress:'进度',rewards:'奖励',account:'账户',money:'💰 财务',
-    dashboard:'仪表板',today:'今日',lifeWheel:'生命轮',addGoal:'添加目标',journal:'日记',
-    challenges:'挑战',analytics:'分析',badges:'徽章',store:'商店',leaderboard:'排行榜',
-    share:'分享进度',settings:'设置',financeTracker:'财务追踪',
-    settingsSub:'个性化您的 LevelUp 体验。',
-    language:'🌐 语言',languageSub:'语言立即更改。',
-    theme:'🎨 主题',themeSub:'在深色和浅色模式之间选择。',
-    notifications:'🔔 通知',notificationsSub:'控制提醒时间。',
-    privacy:'🛡️ 隐私',privacySub:'管理您的数据和可见性。',
-    profile:'👤 个人资料',profileSub:'更新您的姓名和头像。',
-    data:'💾 数据',dataSub:'导出或重置数据。',
-    filter:'筛选:',allCategories:'所有类别',allSubs:'所有子类别',clear:'✕ 清除',
-    byCategory:'按类别',byDifficulty:'按难度',byImportance:'按重要性',
-    daily:'每日',weekly:'每周',monthly:'每月',yearly:'每年',
-    lifeScore:'生活评分',lifeCategories:'生活类别',todayHabits:'今日习惯',quickTasks:'快速任务',add:'+ 添加',
-    dayStreak:'连续天数',coins:'金币',todayDone:'今日完成',
-    todaysTasks:'今日任务',
-    streakAtRisk:'连击有风险！',streakAtRiskSub:'使用冻结来保护您的连击。',
-    lifeWheelSub:'点击类别探索。拖动以重新排序。',
-    goalDetails:'目标详情',goalName:'目标名称',category:'生活类别',subcategory:'子类别',
-    goalType:'目标类型',frequency:'频率',xpReward:'XP奖励',difficulty:'难度',importance:'重要性',
-    saveGoal:'保存目标 ✦',cancel:'取消',manageCategories:'管理类别和目标',
-    addGoalSub:'建立您的个性化生活系统。',
-    financeTrackerSub:'追踪您的资金 — 工资、支出、储蓄。',
-    currentBalance:'当前余额',monthIncome:'月收入',monthSpent:'月支出',totalSavings:'总储蓄',
-    overview:'📊 概览',logExpense:'📝 记录',budget:'📋 预算',wishlist:'🛒 愿望清单',setup:'⚙️ 设置',
-    spendingByCategory:'按类别支出',recentTransactions:'近期交易',
-    addTransaction:'添加交易',type:'类型',amount:'金额',description:'描述',date:'日期',
-    allTransactions:'所有交易',monthlyBudget:'月度预算限制',
-    addWishItem:'添加到愿望清单',itemName:'物品名称',price:'价格',addItem:'+ 添加',
-    financialSetup:'财务设置',currency:'货币',monthlySalary:'月薪',
-    savingsGoal:'月储蓄目标',
-    journalSub:'每日反思、习惯记录和戒除坏习惯进度。',
-    todayEntry:'今日记录',saveEntry:'保存记录 ✦',linkHabit:'🚫 关联戒除习惯',pastEntries:'过往记录',
-    challengesSub:'加入全球挑战，竞争升级。',
-    analyticsSub:'您的进度，可视化。',
-    daysActive:'活跃天数',currentStreak:'当前连击',tasksDone:'已完成任务',completionRate:'完成率',
-    heatmap:'30天活动热图',categoryCompletion:'本月类别完成率',weeklyCompletion:'每周习惯完成',
-    futureSelf:'如果您保持当前进度到2026年底：',less:'少',more:'多',
-    shareTo:'分享到',shareSub:'向世界展示您的成长历程。',
-    chooseSharing:'选择分享内容',chooseSharingSub:'您决定挑战参与者能看到什么。',
-    username:'用户名',streakCount:'连续天数',progressPct:'进度 %',
-    joinChallenge:'加入挑战 →',
-    global:'🌍 全球',
-    avatars:'👤 头像',themes:'🎨 主题',effects:'✨ 效果',tools:'🔧 工具',
-    storeSub:'用金币购买外观和增强道具。',
-    leaderboardSub:'全球竞争 — 您的习惯排名。',
-    yourName:'您的姓名',saveProfile:'保存个人资料',exportData:'📥 导出 JSON',resetData:'⚠️ 重置所有数据',
-    dailyReminder:'每日习惯提醒',streakAlert:'连击风险提醒',weeklySummary:'每周摘要',
-    showLeaderboard:'在排行榜上显示',showStreak:'公开显示连击',
-    addCategory:'添加类别',deleteCategory:'删除类别',editCategory:'编辑类别',
-    deleteGoal:'删除目标',editGoal:'编辑目标',
-  }
+  en:{dir:'ltr',home:'Home',build:'Build',progress:'Progress',rewards:'Rewards',account:'Account',money:'💰 Money',dashboard:'Dashboard',today:'Today',lifeWheel:'Life Wheel',addGoal:'Add Goal',journal:'Journal',challenges:'Challenges',analytics:'Analytics',badges:'Badges',store:'Store',leaderboard:'Leaderboard',share:'Share Progress',settings:'Settings',financeTracker:'Finance Tracker',settingsSub:'Personalize your LevelUp experience.',language:'🌐 Language',languageSub:'App language changes instantly.',theme:'🎨 Theme',themeSub:'Choose between dark and light mode.',notifications:'🔔 Notifications',notificationsSub:'Control when LevelUp reminds you.',privacy:'🛡️ Privacy',privacySub:'Manage your data and visibility.',profile:'👤 Profile',profileSub:'Update your name and avatar.',data:'💾 Data',dataSub:'Export or reset your data.',filter:'Filter:',allCategories:'All Categories',allSubs:'All Subcategories',clear:'✕ Clear',byCategory:'By Category',byDifficulty:'By Difficulty',byImportance:'By Importance',daily:'Daily',weekly:'Weekly',monthly:'Monthly',yearly:'Yearly',lifeScore:'Life Score',lifeCategories:'Life Categories',todayHabits:"Today's Habits",quickTasks:'Quick Tasks',add:'+ Add',dayStreak:'Day Streak',coins:'Coins',todayDone:'Today Done',todaysTasks:"Today's Tasks",streakAtRisk:'Streak at risk!',streakAtRiskSub:'Use a Freeze to protect your streak.',lifeWheelSub:'Click any category to explore. Drag to reorder.',goalDetails:'Goal Details',goalName:'Goal Name',category:'Life Category',subcategory:'Subcategory',goalType:'Goal Type',frequency:'Frequency',xpReward:'XP Reward',difficulty:'Difficulty',importance:'Importance',saveGoal:'Save Goal ✦',cancel:'Cancel',manageCategories:'Manage Categories & Goals',addGoalSub:'Build your custom life system.',financeTrackerSub:'Track your money — salary, expenses, savings, and wishlist.',currentBalance:'CURRENT BALANCE',monthIncome:'Month Income',monthSpent:'Month Spent',totalSavings:'Total Savings',overview:'📊 Overview',logExpense:'📝 Log',budget:'📋 Budget',wishlist:'🛒 Wishlist',setup:'⚙️ Setup',spendingByCategory:'Spending by Category',recentTransactions:'Recent Transactions',addTransaction:'Add Transaction',type:'Type',amount:'Amount',description:'Description',date:'Date',allTransactions:'All Transactions',monthlyBudget:'Monthly Budget Limits',addWishItem:'Add to Wishlist',itemName:'Item Name',price:'Price',addItem:'+ Add Item',financialSetup:'Financial Setup',currency:'Currency',monthlySalary:'Monthly Salary',savingsGoal:'Monthly Savings Goal',journalSub:'Daily reflections, habit logs, and quit habit progress.',todayEntry:"Today's Entry",saveEntry:'Save Entry ✦',linkHabit:'🚫 Link Quit Habit',pastEntries:'Past Entries',challengesSub:'Join global challenges and compete to level up.',analyticsSub:'Your progress, visualized.',daysActive:'Days Active',currentStreak:'Current Streak',tasksDone:'Tasks Done',completionRate:'Completion Rate',heatmap:'30-Day Activity',categoryCompletion:'Category Completion',weeklyCompletion:'Weekly Completion',futureSelf:'If you maintain current pace until end of 2026:',less:'Less',more:'More',shareTo:'Share to',shareSub:'Show the world your growth journey.',chooseSharing:'Choose What You Share',chooseSharingSub:'You decide what challenge participants can see.',username:'Username',streakCount:'Streak Count',progressPct:'Progress %',joinChallenge:'Join Challenge →',global:'🌍 Global',avatars:'👤 Avatars',themes:'🎨 Themes',effects:'✨ Effects',tools:'🔧 Tools',storeSub:'Spend coins on cosmetics and power-ups.',leaderboardSub:'Compete globally — your habits, ranked.',yourName:'Your Name',saveProfile:'Save Profile',exportData:'📥 Export JSON',resetData:'⚠️ Reset All Data',dailyReminder:'Daily Habit Reminders',streakAlert:'Streak at Risk Alert',weeklySummary:'Weekly Summary',showLeaderboard:'Appear on Leaderboard',showStreak:'Show Streak Publicly',addCategory:'Add Category',deleteCategory:'Delete Category',editCategory:'Edit Category',deleteGoal:'Delete Goal',editGoal:'Edit Goal'},
+  ar:{dir:'rtl',home:'الرئيسية',build:'البناء',progress:'التقدم',rewards:'المكافآت',account:'الحساب',money:'💰 المال',dashboard:'لوحة التحكم',today:'اليوم',lifeWheel:'عجلة الحياة',addGoal:'إضافة هدف',journal:'اليوميات',challenges:'التحديات',analytics:'التحليلات',badges:'الشارات',store:'المتجر',leaderboard:'المتصدرين',share:'مشاركة التقدم',settings:'الإعدادات',financeTracker:'تتبع المالية',filter:'فلتر:',allCategories:'جميع الفئات',allSubs:'جميع التصنيفات',clear:'✕ مسح',byCategory:'حسب الفئة',byDifficulty:'حسب الصعوبة',byImportance:'حسب الأهمية',daily:'يومي',weekly:'أسبوعي',monthly:'شهري',yearly:'سنوي',lifeScore:'مؤشر الحياة',lifeCategories:'فئات الحياة',todayHabits:'عادات اليوم',quickTasks:'مهام سريعة',add:'+ إضافة',dayStreak:'أيام متتالية',coins:'عملات',todayDone:'منجز اليوم',todaysTasks:'مهام اليوم',saveGoal:'حفظ الهدف ✦',cancel:'إلغاء',manageCategories:'إدارة الفئات والأهداف',global:'🌍 عالمي',yourName:'اسمك',saveProfile:'حفظ الملف الشخصي',exportData:'📥 تصدير JSON',resetData:'⚠️ إعادة تعيين البيانات'},
+  fr:{dir:'ltr',home:'Accueil',build:'Construire',progress:'Progrès',rewards:'Récompenses',account:'Compte',money:'💰 Argent',dashboard:'Tableau de bord',today:"Aujourd'hui",lifeWheel:'Roue de vie',addGoal:'Ajouter un objectif',journal:'Journal',challenges:'Défis',analytics:'Analyses',badges:'Badges',store:'Boutique',leaderboard:'Classement',share:'Partager',settings:'Paramètres',financeTracker:'Finances',filter:'Filtrer:',allCategories:'Toutes les catégories',allSubs:'Toutes les sous-catégories',clear:'✕ Effacer',daily:'Quotidien',weekly:'Hebdomadaire',monthly:'Mensuel',yearly:'Annuel',lifeScore:'Score de vie',lifeCategories:'Catégories',todayHabits:"Habitudes d'aujourd'hui",quickTasks:'Tâches rapides',add:'+ Ajouter',dayStreak:'Jours consécutifs',coins:'Pièces',todayDone:"Fait aujourd'hui",todaysTasks:"Tâches d'aujourd'hui",saveGoal:"Enregistrer l'objectif ✦",cancel:'Annuler',global:'🌍 Mondial',yourName:'Votre nom',saveProfile:'Enregistrer le profil',exportData:'📥 Exporter JSON',resetData:'⚠️ Réinitialiser'},
+  es:{dir:'ltr',home:'Inicio',build:'Construir',progress:'Progreso',rewards:'Recompensas',account:'Cuenta',money:'💰 Dinero',dashboard:'Panel',today:'Hoy',lifeWheel:'Rueda de vida',addGoal:'Agregar objetivo',journal:'Diario',challenges:'Desafíos',analytics:'Análisis',badges:'Insignias',store:'Tienda',leaderboard:'Clasificación',share:'Compartir progreso',settings:'Configuración',financeTracker:'Finanzas',filter:'Filtrar:',allCategories:'Todas las categorías',allSubs:'Todas las subcategorías',clear:'✕ Limpiar',daily:'Diario',weekly:'Semanal',monthly:'Mensual',yearly:'Anual',lifeScore:'Puntuación de vida',lifeCategories:'Categorías de vida',todayHabits:'Hábitos de hoy',quickTasks:'Tareas rápidas',add:'+ Agregar',dayStreak:'Días seguidos',coins:'Monedas',todayDone:'Completado hoy',todaysTasks:'Tareas de hoy',saveGoal:'Guardar objetivo ✦',cancel:'Cancelar',global:'🌍 Global',yourName:'Tu nombre',saveProfile:'Guardar perfil',exportData:'📥 Exportar JSON',resetData:'⚠️ Restablecer todo'},
+  zh:{dir:'ltr',home:'首页',build:'构建',progress:'进度',rewards:'奖励',account:'账户',money:'💰 财务',dashboard:'仪表板',today:'今日',lifeWheel:'生命轮',addGoal:'添加目标',journal:'日记',challenges:'挑战',analytics:'分析',badges:'徽章',store:'商店',leaderboard:'排行榜',share:'分享进度',settings:'设置',financeTracker:'财务追踪',filter:'筛选:',allCategories:'所有类别',allSubs:'所有子类别',clear:'✕ 清除',daily:'每日',weekly:'每周',monthly:'每月',yearly:'每年',lifeScore:'生活评分',lifeCategories:'生活类别',todayHabits:'今日习惯',quickTasks:'快速任务',add:'+ 添加',dayStreak:'连续天数',coins:'金币',todayDone:'今日完成',todaysTasks:'今日任务',saveGoal:'保存目标 ✦',cancel:'取消',global:'🌍 全球',yourName:'您的姓名',saveProfile:'保存个人资料',exportData:'📥 导出 JSON',resetData:'⚠️ 重置所有数据'}
 };
 
 function t(key){ return (I18N[currentLang]||I18N.en)[key] || (I18N.en)[key] || key; }
 
 function setLang(code, btn){
-  currentLang = code;
-  const L = I18N[code]||I18N.en;
-  document.documentElement.lang = code;
-  document.documentElement.setAttribute('data-dir', L.dir);
-  document.documentElement.dir = L.dir;
-  // Update all static i18n elements
+  currentLang=code;
+  const L=I18N[code]||I18N.en;
+  document.documentElement.lang=code;
+  document.documentElement.setAttribute('data-dir',L.dir);
+  document.documentElement.dir=L.dir;
   document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const key = el.getAttribute('data-i18n');
-    const val = L[key];
-    if(val != null) el.textContent = val;
+    const key=el.getAttribute('data-i18n');
+    const val=L[key];
+    if(val!=null) el.textContent=val;
   });
-  // Update lang buttons
   document.querySelectorAll('[id^="langBtn-"]').forEach(b=>b.classList.remove('active'));
-  const activeBtn = document.getElementById('langBtn-'+code);
-  if(activeBtn) activeBtn.classList.add('active');
-  if(btn){ document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
-  localStorage.setItem('lu_lang', code);
+  const ab=document.getElementById('langBtn-'+code);
+  if(ab) ab.classList.add('active');
+  if(btn){document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+  localStorage.setItem('lu_lang',code);
   renderAll();
-  showToast('🌐', 'Language changed', L.settings||'Settings updated');
-}
-
-// ═══════════════════════════════════════════════
-//  VIEW ROUTING
-// ═══════════════════════════════════════════════
-function goView(id, btn){
-  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-  document.querySelectorAll('.sb-item').forEach(b=>b.classList.remove('active'));
-  const v=document.getElementById('view-'+id);
-  if(v) v.classList.add('active');
-  if(btn) btn.classList.add('active');
-  // Per-view render hooks
-  if(id==='share') renderShareCard();
-  if(id==='finance') renderFinance();
-  if(id==='journal') renderJournal();
-  if(id==='badges') renderBadges();
-  if(id==='store') renderStore();
-  if(id==='leaderboard') renderLeaderboard();
-  if(id==='analytics') renderAnalytics();
-  if(id==='challenges') renderChallenges();
-  if(id==='lifewheel') { renderWheelGrid(); populateFilters(); }
-  if(id==='add') renderManageCats();
-  if(id==='dashboard'||id==='today') { renderToday(); renderDashGrid(); renderDashHabits(); renderOneTasks(); }
+  showToast('🌐','Language changed','');
 }
 
 // ═══════════════════════════════════════════════
@@ -1818,7 +1485,6 @@ function renderAll(){
   renderOneTasks();
   populateFilters();
   updateTodayBadge();
-  // greet
   const hr=new Date().getHours();
   document.getElementById('dashGreet').textContent=`${hr<12?'Good morning ☀️':hr<17?'Good afternoon 👋':'Good evening 🌙'}, ${userName}`;
   const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -1826,13 +1492,11 @@ function renderAll(){
   const now=new Date();
   document.getElementById('dashDate').textContent=`${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
   document.getElementById('navAvatar').childNodes[0].textContent=userAvatar;
-  // Settings avatar grid
   const sag=document.getElementById('settingsAvaGrid');
+  const AVATARS=['🧠','💪','🔥','⚡','🌟','🏆','🎯','🚀','🦁','🐺','🦅','🌙'];
   if(sag) sag.innerHTML=AVATARS.map(a=>`<button class="av-opt ${a===userAvatar?'selected':''}" onclick="pickSettingsAva('${a}',this)">${a}</button>`).join('');
-  // Settings name
   const sn=document.getElementById('settingsName');
   if(sn) sn.value=userName;
-  // Finance setup fields
   const fi=document.getElementById('finBalanceInput'),fs=document.getElementById('finSalaryInput'),fg=document.getElementById('finSavingsGoal'),fc=document.getElementById('finCurrency');
   if(fi) fi.value=FINANCE.balance;
   if(fs) fs.value=FINANCE.salary;
@@ -1855,28 +1519,20 @@ function updateNavCounters(){
   document.getElementById('storeCoins').textContent=coins+' coins';
   const l=LEVELS.find(ll=>ll.lv===level)||LEVELS[LEVELS.length-1];
   const nextL=LEVELS.find(ll=>ll.lv===level+1);
-  const curXP=xp-l.xp, needXP=nextL?(nextL.xp-l.xp):1, pct=Math.min(100,Math.round(curXP/needXP*100));
+  const curXP=xp-l.xp,needXP=nextL?(nextL.xp-l.xp):1,pct=Math.min(100,Math.round(curXP/needXP*100));
   document.getElementById('xpBarFill').style.width=pct+'%';
   document.getElementById('xpProgress').textContent=xp.toLocaleString()+' / '+(nextL?nextL.xp.toLocaleString():'MAX')+' XP';
   document.getElementById('heroLevel').textContent='LEVEL '+level+' · '+(l.name||'').toUpperCase();
   document.getElementById('heroName').textContent=userName;
-  document.getElementById('heroTitle').textContent='Building greatness, one habit at a time';
   const done=GOALS.filter(g=>taskDone[g.id]).length;
   document.getElementById('heroDone').textContent=done;
-  // overall score
   const cats=[...new Set(GOALS.map(g=>g.cat))];
   const total=cats.reduce((a,c)=>{const g=GOALS.filter(gg=>gg.cat===c);return a+(g.length?Math.round(g.filter(gg=>taskDone[gg.id]).length/g.length*100):0);},0);
   const avg=cats.length?Math.round(total/cats.length):0;
   document.getElementById('heroTotal').textContent=avg+'%';
   saveUser();
 }
-function saveUser(){localStorage.setItem('lu_user',JSON.stringify({userName,userAvatar,xp,coins,level,streak}));}
-
-function addXP(amount){
-  xp+=amount;coins+=Math.floor(amount/10);
-  updateNavCounters();
-}
-
+function addXP(amount){xp+=amount;coins+=Math.floor(amount/10);updateNavCounters();}
 function updateTodayBadge(){
   const rem=GOALS.filter(g=>!taskDone[g.id]).length;
   const el=document.getElementById('todayBadge');
@@ -1921,10 +1577,10 @@ function filterToday(catId){
 // ═══════════════════════════════════════════════
 function populateFilters(){
   const cats=[...new Set(GOALS.map(g=>g.cat))];
-  const opts=`<option value="">${t('allCategories')}</option>`+cats.map(c=>{const m=getCatMeta(c);return `<option value="${c}">${m.icon} ${m.name}</option>`;}).join('');
+  const opts=`<option value="">${t('allCategories')}</option>`+cats.map(c=>{const m=getCatMeta(c);return`<option value="${c}">${m.icon} ${m.name}</option>`;}).join('');
   ['dashFilterCat','todayFilterCat','wheelFilterCat'].forEach(id=>{const el=document.getElementById(id);if(el) el.innerHTML=opts;});
 }
-function getSubs(catId, sel){
+function getSubs(catId,sel){
   const cats=GOALS.filter(g=>g.cat===catId);
   const subs=[...new Set(cats.map(g=>g.sub))];
   const el=document.getElementById(sel);
@@ -1933,15 +1589,15 @@ function getSubs(catId, sel){
 }
 function onDashFilterCat(){getSubs(document.getElementById('dashFilterCat').value,'dashFilterSub');renderDashHabits();renderDashGrid();}
 function onTodayFilterCat(){getSubs(document.getElementById('todayFilterCat').value,'todayFilterSub');renderToday();}
-function clearDashFilter(){['dashFilterCat','dashFilterSub','dashFilterSort'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='dashFilterSort'===id?'category':'';});renderDashHabits();renderDashGrid();}
+function clearDashFilter(){['dashFilterCat','dashFilterSub','dashFilterSort'].forEach(id=>{const el=document.getElementById(id);if(el)el.value=id==='dashFilterSort'?'category':'';});renderDashHabits();renderDashGrid();}
 function clearTodayFilter(){['todayFilterCat','todayFilterSub','todaySort'].forEach(id=>{const el=document.getElementById(id);if(el)el.value=id==='todaySort'?'category':'';});renderToday();}
 
 // ═══════════════════════════════════════════════
 //  DASH GRID
 // ═══════════════════════════════════════════════
-function renderDashGrid(filterCat='', filterSub=''){
-  const fc=filterCat||(document.getElementById('dashFilterCat')?.value||'');
-  const fs=filterSub||(document.getElementById('dashFilterSub')?.value||'');
+function renderDashGrid(){
+  const fc=document.getElementById('dashFilterCat')?.value||'';
+  const fs=document.getElementById('dashFilterSub')?.value||'';
   let cats=[...new Set(GOALS.map(g=>g.cat))];
   if(fc) cats=cats.filter(c=>c===fc);
   const html=cats.map(catId=>{
@@ -1951,7 +1607,7 @@ function renderDashGrid(filterCat='', filterSub=''){
     return renderCatCard(catId,goals);
   }).join('');
   const el=document.getElementById('dashLifeGrid');
-  if(el) el.innerHTML=html||`<div style="color:var(--muted2);font-size:.82rem">${t('allCategories')}: none</div>`;
+  if(el) el.innerHTML=html||`<div style="color:var(--muted2);font-size:.82rem">No goals yet.</div>`;
 }
 
 function renderWheelGrid(){
@@ -1963,10 +1619,10 @@ function renderWheelGrid(){
     return renderCatCard(catId,goals,true);
   }).join('');
   const el=document.getElementById('wheelGrid');
-  if(el){ el.innerHTML=html||'<div style="color:var(--muted2)">No goals yet.</div>'; initDragGrid(el); }
+  if(el){el.innerHTML=html||'<div style="color:var(--muted2)">No goals yet.</div>';initDragGrid(el);}
 }
 
-function renderCatCard(catId, goals, draggable=false){
+function renderCatCard(catId,goals,draggable=false){
   const m=getCatMeta(catId);
   const done=goals.filter(g=>taskDone[g.id]).length;
   const pct=goals.length?Math.round(done/goals.length*100):0;
@@ -1989,28 +1645,27 @@ function renderCatCard(catId, goals, draggable=false){
       <div class="lc-prog"><div class="lc-prog-fill" style="width:${pct}%;background:${m.color}"></div></div>
       <div class="lc-chips">${chips}</div>
     </div>
-    <div class="lc-foot"><span style="color:var(--muted2)">${subs.length} ${t('subcategory')||'subs'}</span><span class="lc-xp" style="color:${m.color}">✦ ${totalXP} XP</span></div>
+    <div class="lc-foot"><span style="color:var(--muted2)">${subs.length} subs</span><span class="lc-xp" style="color:${m.color}">✦ ${totalXP} XP</span></div>
   </div>`;
 }
 
 // ═══════════════════════════════════════════════
-//  DRAG GRID (category reorder)
+//  DRAG GRID
 // ═══════════════════════════════════════════════
 let dragSrc=null;
 function initDragGrid(el){
   el.querySelectorAll('.lc[draggable]').forEach(card=>{
     card.addEventListener('dragstart',e=>{dragSrc=card;card.style.opacity='.4';e.dataTransfer.effectAllowed='move';});
     card.addEventListener('dragend',()=>{dragSrc.style.opacity='';el.querySelectorAll('.lc').forEach(c=>c.classList.remove('drag-over'));});
-    card.addEventListener('dragover',e=>{e.preventDefault();if(card!==dragSrc) card.classList.add('drag-over');return false;});
+    card.addEventListener('dragover',e=>{e.preventDefault();if(card!==dragSrc)card.classList.add('drag-over');return false;});
     card.addEventListener('dragleave',()=>card.classList.remove('drag-over'));
     card.addEventListener('drop',e=>{
       e.stopPropagation();
       if(dragSrc!==card){
         const cats=[...el.querySelectorAll('.lc')].map(c=>c.dataset.cat);
-        const si=cats.indexOf(dragSrc.dataset.cat), di=cats.indexOf(card.dataset.cat);
+        const si=cats.indexOf(dragSrc.dataset.cat),di=cats.indexOf(card.dataset.cat);
         catOrder.splice(si,0,...catOrder.splice(di,1));
-        saveCatOrder();
-        renderWheelGrid();
+        saveCatOrder();renderWheelGrid();
       }
       return false;
     });
@@ -2023,48 +1678,36 @@ function initDragGrid(el){
 function renderDashHabits(){
   const fc=document.getElementById('dashFilterCat')?.value||'';
   const fs=document.getElementById('dashFilterSub')?.value||'';
-  const sort=document.getElementById('dashFilterSort')?.value||'category';
   let goals=[...GOALS];
   if(fc) goals=goals.filter(g=>g.cat===fc);
   if(fs) goals=goals.filter(g=>g.sub===fs);
-  const diffOrder={easy:0,medium:1,hard:2};
-  const impOrder={low:0,medium:1,high:2,critical:3};
-  if(sort==='difficulty') goals.sort((a,b)=>diffOrder[b.diff]-diffOrder[a.diff]);
-  else if(sort==='importance') goals.sort((a,b)=>impOrder[b.imp||'medium']-impOrder[a.imp||'medium']);
-  else goals.sort((a,b)=>a.cat.localeCompare(b.cat));
-
   if(!goals.length){
     document.getElementById('dashHabitsList').innerHTML=`<div style="color:var(--muted2);font-size:.82rem;padding:10px 0">No habits yet. <span style="color:#7c3aed;cursor:pointer" onclick="goView('add')">Add your first goal →</span></div>`;
     return;
   }
-  // Group by cat
   const groups={};
-  goals.forEach(g=>{
-    if(!groups[g.cat]) groups[g.cat]=[];
-    groups[g.cat].push(g);
-  });
+  goals.forEach(g=>{if(!groups[g.cat])groups[g.cat]=[];groups[g.cat].push(g);});
   document.getElementById('dashHabitsList').innerHTML=Object.entries(groups).map(([catId,gs])=>{
     const m=getCatMeta(catId);
     const rows=gs.map(g=>{
       const done=taskDone[g.id];
       const diffClass=g.diff==='easy'?'diff-easy':g.diff==='hard'?'diff-hard':'diff-med';
-      // quit habit counter
       let qCounter='';
-      if(catId==='quit'&&g.type==='Quit bad habit'){
+      if(catId==='quit'){
         const q=QUIT_DATA[g.id];
         const days=q?Math.floor((Date.now()-new Date(q.startDate).getTime())/86400000):0;
         qCounter=`<span style="font-size:.65rem;font-weight:700;color:#db2777;margin-right:4px">${days}d free</span>`;
       }
       return `<div class="task-row ${done?'tdone':''}" onclick="toggleTask(${g.id},${g.xp})">
-        <div class="drag-handle" title="Drag">⠿</div>
+        <div class="drag-handle">⠿</div>
         <div class="tcheck" style="${done?`background:${m.color};border-color:${m.color}`:''}">${done?'✓':''}</div>
         <div class="tinfo"><div class="tname">${g.name}</div><div class="tcat">${m.icon} ${m.name} · ${g.sub}</div></div>
         ${qCounter}
         <span class="tdiff ${diffClass}">${g.diff}</span>
         <span class="txp" style="color:${m.color}">+${g.xp}</span>
         <div class="task-row-actions" onclick="event.stopPropagation()">
-          <button class="tr-act-btn" style="background:rgba(124,58,237,.12);color:#7c3aed" onclick="editGoal(${g.id})" title="Edit">✏️</button>
-          <button class="tr-act-btn" style="background:rgba(239,68,68,.1);color:#ef4444" onclick="confirmDeleteGoal(${g.id})" title="Delete">🗑️</button>
+          <button class="tr-act-btn" style="background:rgba(124,58,237,.12);color:#7c3aed" onclick="editGoal(${g.id})">✏️</button>
+          <button class="tr-act-btn" style="background:rgba(239,68,68,.1);color:#ef4444" onclick="confirmDeleteGoal(${g.id})">🗑️</button>
         </div>
       </div>`;
     }).join('');
@@ -2085,18 +1728,11 @@ function renderDashHabits(){
 function renderToday(){
   const fc=document.getElementById('todayFilterCat')?.value||'';
   const fs=document.getElementById('todayFilterSub')?.value||'';
-  const sort=document.getElementById('todaySort')?.value||'category';
-  const diffO={easy:0,medium:1,hard:2};
-  const impO={low:0,medium:1,high:2,critical:3};
   let cats=[...new Set(GOALS.map(g=>g.cat))];
   if(fc) cats=cats.filter(c=>c===fc);
-  let totalT=0,doneT=0;
   let allGoals=[];
   cats.forEach(c=>allGoals.push(...GOALS.filter(g=>g.cat===c&&(!fs||g.sub===fs))));
-  if(sort==='difficulty') allGoals.sort((a,b)=>diffO[b.diff]-diffO[a.diff]);
-  else if(sort==='importance') allGoals.sort((a,b)=>impO[b.imp||'medium']-impO[a.imp||'medium']);
-  totalT=allGoals.length; doneT=allGoals.filter(g=>taskDone[g.id]).length;
-  // group by cat again for display
+  const totalT=allGoals.length,doneT=allGoals.filter(g=>taskDone[g.id]).length;
   const groups={};
   allGoals.forEach(g=>{if(!groups[g.cat])groups[g.cat]=[];groups[g.cat].push(g);});
   const html=Object.entries(groups).map(([catId,tasks])=>{
@@ -2107,11 +1743,7 @@ function renderToday(){
       const done=taskDone[g.id];
       const diffClass=g.diff==='easy'?'diff-easy':g.diff==='hard'?'diff-hard':'diff-med';
       let qCounter='';
-      if(catId==='quit'){
-        const q=QUIT_DATA[g.id];
-        const days=q?Math.floor((Date.now()-new Date(q.startDate).getTime())/86400000):0;
-        qCounter=`<span style="font-size:.65rem;font-weight:700;color:#db2777;margin-right:4px">${days}d free</span>`;
-      }
+      if(catId==='quit'){const q=QUIT_DATA[g.id];const days=q?Math.floor((Date.now()-new Date(q.startDate).getTime())/86400000):0;qCounter=`<span style="font-size:.65rem;font-weight:700;color:#db2777;margin-right:4px">${days}d free</span>`;}
       return `<div class="task-row ${done?'tdone':''}" onclick="toggleTask(${g.id},${g.xp})">
         <div class="tcheck" style="${done?`background:${m.color};border-color:${m.color}`:''}">${done?'✓':''}</div>
         <div class="tinfo"><div class="tname">${g.name}</div><div class="tcat">${m.icon} · ${g.sub}</div></div>
@@ -2123,7 +1755,7 @@ function renderToday(){
     return `<div class="task-section">
       <div class="task-sec-head" onclick="toggleSection(this)">
         <div class="tsh-icon" style="background:${m.color}18">${m.icon}</div>
-        <div class="tsh-info"><div class="tsh-name">${m.name}</div><div class="tsh-sub">${catDone}/${tasks.length} · ${[...new Set(tasks.map(g=>g.sub))].join(', ')}</div></div>
+        <div class="tsh-info"><div class="tsh-name">${m.name}</div><div class="tsh-sub">${catDone}/${tasks.length}</div></div>
         <div class="tsh-right"><span class="tsh-pct" style="color:${m.color}">${pct}%</span><span class="collapse-icon">▼</span></div>
       </div>
       <div class="task-sec-body">${rows}</div>
@@ -2146,48 +1778,35 @@ function toggleSection(head){
 // ═══════════════════════════════════════════════
 //  TASK TOGGLE
 // ═══════════════════════════════════════════════
-function toggleTask(id, xpAmt){
+function toggleTask(id,xpAmt){
   const wasD=taskDone[id];
   taskDone[id]=!wasD;
   saveTaskDone();
-  // quit habit: init tracking
   const g=GOALS.find(gg=>gg.id===id);
   if(g&&g.cat==='quit'&&!wasD){
     if(!QUIT_DATA[id]) QUIT_DATA[id]={startDate:new Date().toISOString(),slips:[]};
     saveQuit();
   }
-  if(!wasD){
-    addXP(xpAmt);
-    showToast('✅','Task complete!',`+${xpAmt} XP`);
-  } else {
-    xp=Math.max(0,xp-xpAmt);
-    updateNavCounters();
-  }
-  renderScoreRow();
-  renderDashGrid();
-  renderDashHabits();
-  renderToday();
-  renderOneTasks();
+  if(!wasD){addXP(xpAmt);showToast('✅','Task complete!',`+${xpAmt} XP`);}
+  else{xp=Math.max(0,xp-xpAmt);updateNavCounters();}
+  renderScoreRow();renderDashGrid();renderDashHabits();renderToday();renderOneTasks();
 }
-
 function useFreeze(){
   if(coins>=100){coins-=100;updateNavCounters();showToast('❄️','Streak Freeze activated!','Streak protected for today');}
-  else showToast('⚠️','Not enough coins','Need 100 coins for a Streak Freeze');
+  else showToast('⚠️','Not enough coins','Need 100 coins');
 }
 
 // ═══════════════════════════════════════════════
 //  ADD / EDIT / DELETE GOALS
 // ═══════════════════════════════════════════════
-let editingGoalId=null;
-let gDiff='medium',gImp='medium';
+let gDiff='medium', gImp='medium';
 
 function onGCatChange(){
   const cat=document.getElementById('gCat').value;
-  const isCustom=cat==='custom';
-  document.getElementById('customCatField').style.display=isCustom?'block':'none';
+  document.getElementById('customCatField').style.display=cat==='custom'?'block':'none';
   const subs=SUBS_DEFAULT[cat]||['General'];
   const subSel=document.getElementById('gSub');
-  subSel.innerHTML=subs.map((s,i)=>`<option value="${s}">${s}</option>`).join('');
+  subSel.innerHTML=subs.map(s=>`<option value="${s}">${s}</option>`).join('');
   document.getElementById('customSubField').style.display='none';
   subSel.onchange=()=>{
     if(subSel.value==='Add New...') document.getElementById('customSubField').style.display='block';
@@ -2197,12 +1816,12 @@ function onGCatChange(){
 onGCatChange();
 
 function selectDiff(d,el){
-  gDiff=d;document.getElementById('gDiff').value=d;
+  gDiff=d;
   document.querySelectorAll('.diff-opt').forEach(o=>{o.className='diff-opt';});
   el.className='diff-opt selected-'+d;
 }
 function selectImp(imp,el){
-  gImp=imp;document.getElementById('gImp').value=imp;
+  gImp=imp;
   document.querySelectorAll('.imp-opt').forEach(o=>o.classList.remove('selected'));
   el.classList.add('selected');
 }
@@ -2219,13 +1838,7 @@ function saveGoal(){
   const editId=parseInt(document.getElementById('gEditId').value)||0;
   if(editId){
     const g=GOALS.find(g=>g.id===editId);
-    if(g){
-      g.name=name;g.cat=cat;g.sub=sub;
-      g.xp=parseInt(document.getElementById('gXP').value)||20;
-      g.diff=gDiff;g.imp=gImp;
-      g.freq=document.getElementById('gFreq').value;
-      g.type=document.getElementById('gType').value;
-    }
+    if(g){g.name=name;g.cat=cat;g.sub=sub;g.xp=parseInt(document.getElementById('gXP').value)||20;g.diff=gDiff;g.imp=gImp;g.freq=document.getElementById('gFreq').value;g.type=document.getElementById('gType').value;}
     showToast('✅','Goal updated!',name);
   } else {
     if(cat==='custom'){
@@ -2237,18 +1850,10 @@ function saveGoal(){
         saveCustomCats();
       }
     }
-    GOALS.push({
-      id:goalNextId++,name,cat:cat==='custom'?('cat_'+Date.now()):cat,sub:sub||'General',
-      xp:parseInt(document.getElementById('gXP').value)||20,
-      diff:gDiff,imp:gImp,
-      freq:document.getElementById('gFreq').value,
-      type:document.getElementById('gType').value
-    });
-    showToast('✦','New goal added!',name+' — keep it up!');
+    GOALS.push({id:goalNextId++,name,cat,sub:sub||'General',xp:parseInt(document.getElementById('gXP').value)||20,diff:gDiff,imp:gImp,freq:document.getElementById('gFreq').value,type:document.getElementById('gType').value});
+    showToast('✦','New goal added!',name);
   }
-  saveGoals();
-  cancelEdit();
-  renderAll();
+  saveGoals();cancelEdit();renderAll();
 }
 
 function editGoal(id){
@@ -2277,12 +1882,8 @@ function cancelEdit(){
 
 function confirmDeleteGoal(id){
   const g=GOALS.find(g=>g.id===id);
-  openConfirm('Delete Goal', `Delete "${g?.name||'this goal'}"? This cannot be undone.`, ()=>{
-    GOALS=GOALS.filter(g=>g.id!==id);
-    delete taskDone[id];
-    saveGoals();saveTaskDone();
-    renderAll();
-    showToast('🗑️','Goal deleted','Removed successfully');
+  openConfirm('Delete Goal',`Delete "${g?.name||'this goal'}"? Cannot be undone.`,()=>{
+    GOALS=GOALS.filter(g=>g.id!==id);delete taskDone[id];saveGoals();saveTaskDone();renderAll();showToast('🗑️','Goal deleted','');
   });
 }
 
@@ -2296,7 +1897,7 @@ function renderManageCats(){
     const goals=GOALS.filter(g=>g.cat===catId);
     return `<div style="border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden">
       <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--s2)">
-        <div style="width:32px;height:32px;background:${m.color}18;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem">${m.icon}</div>
+        <div style="width:32px;height:32px;background:${m.color}18;border-radius:8px;display:flex;align-items:center;justify-content:center">${m.icon}</div>
         <div style="flex:1"><div style="font-size:.82rem;font-weight:700">${m.name}</div><div style="font-size:.66rem;color:var(--muted2)">${goals.length} goals</div></div>
         <button class="btn-ghost" style="padding:5px 10px;font-size:.7rem" onclick="editCat('${catId}')">✏️ Edit</button>
         <button class="btn-danger" style="padding:5px 10px;font-size:.7rem" onclick="confirmDeleteCat('${catId}')">🗑️</button>
@@ -2308,35 +1909,23 @@ function renderManageCats(){
         <button class="tr-act-btn" style="background:rgba(239,68,68,.08);color:#ef4444" onclick="confirmDeleteGoal(${g.id})">🗑️</button>
       </div>`).join('')}
     </div>`;
-  }).join('')||'<div style="color:var(--muted2);font-size:.82rem">No goals yet. Add your first goal above.</div>';
+  }).join('')||'<div style="color:var(--muted2);font-size:.82rem">No goals yet.</div>';
 }
 
 function editCat(catId){
   const m=getCatMeta(catId);
-  const newName=prompt(`Edit category name (currently: ${m.name}):`, m.name);
+  const newName=prompt(`Edit category name (currently: ${m.name}):`,m.name);
   if(!newName||newName===m.name) return;
   const c=CUSTOM_CATS.find(c=>c.id===catId);
-  if(c){ c.name=newName; saveCustomCats(); }
-  else {
-    // Add to customizations of built-in
-    if(!CUSTOM_CATS.find(c=>c.id===catId)){
-      CUSTOM_CATS.push({...CAT_META_DEFAULT[catId],id:catId,name:newName});
-    }
-    saveCustomCats();
-  }
-  renderAll();
-  showToast('✏️','Category updated!',newName);
+  if(c){c.name=newName;saveCustomCats();}
+  else{if(!CUSTOM_CATS.find(c=>c.id===catId)){CUSTOM_CATS.push({...CAT_META_DEFAULT[catId],id:catId,name:newName});}saveCustomCats();}
+  renderAll();showToast('✏️','Category updated!',newName);
 }
-
 function confirmDeleteCat(catId){
   const m=getCatMeta(catId);
   const count=GOALS.filter(g=>g.cat===catId).length;
-  openConfirm('Delete Category', `Delete "${m.name}"? This will also delete ${count} goals in it.`, ()=>{
-    GOALS=GOALS.filter(g=>g.cat!==catId);
-    CUSTOM_CATS=CUSTOM_CATS.filter(c=>c.id!==catId);
-    saveGoals();saveCustomCats();
-    renderAll();
-    showToast('🗑️','Category deleted','');
+  openConfirm('Delete Category',`Delete "${m.name}"? This will also delete ${count} goals.`,()=>{
+    GOALS=GOALS.filter(g=>g.cat!==catId);CUSTOM_CATS=CUSTOM_CATS.filter(c=>c.id!==catId);saveGoals();saveCustomCats();renderAll();showToast('🗑️','Category deleted','');
   });
 }
 
@@ -2370,10 +1959,7 @@ function openCatDetail(catId){
         </div>
       </div>`;
     }).join('');
-    return `<div class="sub-group">
-      <div class="sub-group-title">${sub} <span style="color:var(--muted);font-weight:400">${sd}/${sg.length}</span></div>
-      ${rows}
-    </div>`;
+    return `<div class="sub-group"><div class="sub-group-title">${sub} <span style="color:var(--muted);font-weight:400">${sd}/${sg.length}</span></div>${rows}</div>`;
   }).join('');
   document.getElementById('catDetailOverlay').classList.add('open');
 }
@@ -2389,16 +1975,14 @@ function addOneTask(src){
   const text=inp.value.trim();
   if(!text) return;
   ONE_TASKS.push({id:otNextId++,text,done:false,created:Date.now()});
-  inp.value='';
-  saveOneTasks();
-  renderOneTasks();
+  inp.value='';saveOneTasks();renderOneTasks();
   showToast('⚡','Quick task added!','Just get it done');
 }
 function toggleOneTask(id){
-  const t=ONE_TASKS.find(t=>t.id===id);
-  if(!t) return;
-  t.done=!t.done;
-  if(t.done){addXP(10);showToast('✅','Quick task done!','+10 XP');}
+  const task=ONE_TASKS.find(t=>t.id===id);
+  if(!task) return;
+  task.done=!task.done;
+  if(task.done){addXP(10);showToast('✅','Quick task done!','+10 XP');}
   else{xp=Math.max(0,xp-10);updateNavCounters();}
   saveOneTasks();renderOneTasks();
 }
@@ -2410,23 +1994,15 @@ function renderOneTasks(){
       <span class="onetask-text ${t.done?'done':''}">${t.text}</span>
       <button class="onetask-del" onclick="deleteOneTask(${t.id})">✕</button>
     </div>`).join(''):`<div style="font-size:.72rem;color:var(--muted);padding:4px 0">No quick tasks yet.</div>`;
-  ['dashOTList','todayOTList'].forEach(id=>{const el=document.getElementById(id);if(el) el.innerHTML=html;});
+  ['dashOTList','todayOTList'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=html;});
 }
 
 // ═══════════════════════════════════════════════
 //  FINANCE TRACKER
 // ═══════════════════════════════════════════════
-const FINANCE_CATS={
-  food:{icon:'🍔',color:'#f87171'},transport:{icon:'🚗',color:'#fb923c'},
-  shopping:{icon:'🛍️',color:'#a78bfa'},bills:{icon:'💡',color:'#fbbf24'},
-  health:{icon:'🏥',color:'#34d399'},entertainment:{icon:'🎬',color:'#60a5fa'},
-  education:{icon:'📚',color:'#818cf8'},salary:{icon:'💼',color:'#4ade80'},
-  freelance:{icon:'💻',color:'#4ade80'},other:{icon:'📦',color:'#94a3b8'},
-  saving:{icon:'💙',color:'#60a5fa'},
-};
+const FINANCE_CATS={food:{icon:'🍔',color:'#f87171'},transport:{icon:'🚗',color:'#fb923c'},shopping:{icon:'🛍️',color:'#a78bfa'},bills:{icon:'💡',color:'#fbbf24'},health:{icon:'🏥',color:'#34d399'},entertainment:{icon:'🎬',color:'#60a5fa'},education:{icon:'📚',color:'#818cf8'},salary:{icon:'💼',color:'#4ade80'},freelance:{icon:'💻',color:'#4ade80'},other:{icon:'📦',color:'#94a3b8'},saving:{icon:'💙',color:'#60a5fa'}};
 function getCurrency(){return FINANCE.currency||'$';}
 function fmt(n){return getCurrency()+parseFloat(n||0).toFixed(2);}
-
 function saveFinSetup(){
   FINANCE.balance=parseFloat(document.getElementById('finBalanceInput')?.value)||0;
   FINANCE.salary=parseFloat(document.getElementById('finSalaryInput')?.value)||0;
@@ -2434,7 +2010,6 @@ function saveFinSetup(){
   FINANCE.currency=document.getElementById('finCurrency')?.value||'$';
   saveFinance();renderFinance();
 }
-
 function addTransaction(){
   const type=document.getElementById('txType').value;
   const amount=parseFloat(document.getElementById('txAmount').value)||0;
@@ -2445,16 +2020,12 @@ function addTransaction(){
   FINANCE.transactions.unshift({id:Date.now(),type,amount,cat,desc,date});
   if(type==='expense') FINANCE.balance-=amount;
   else if(type==='income') FINANCE.balance+=amount;
-  else if(type==='saving'){ FINANCE.balance-=amount; FINANCE.totalSavings=(FINANCE.totalSavings||0)+amount; }
-  document.getElementById('txAmount').value='';
-  document.getElementById('txDesc').value='';
-  // journal crosslink
+  else if(type==='saving'){FINANCE.balance-=amount;FINANCE.totalSavings=(FINANCE.totalSavings||0)+amount;}
+  document.getElementById('txAmount').value='';document.getElementById('txDesc').value='';
   JOURNAL.unshift({id:Date.now(),date,mood:'💰',text:`Finance log: ${type} ${fmt(amount)} — ${desc}`,tags:['finance'],linkedHabit:null});
-  saveJournal();saveFinance();
-  renderFinance();
+  saveJournal();saveFinance();renderFinance();
   showToast('💰',`${type} logged`,`${fmt(amount)} — ${desc}`);
 }
-
 function deleteTransaction(id){
   const tx=FINANCE.transactions.find(t=>t.id===id);
   if(!tx) return;
@@ -2463,7 +2034,6 @@ function deleteTransaction(id){
   FINANCE.transactions=FINANCE.transactions.filter(t=>t.id!==id);
   saveFinance();renderFinance();
 }
-
 function setBudget(){
   const cat=document.getElementById('budgetCatSel').value;
   const amt=parseFloat(document.getElementById('budgetAmt').value)||0;
@@ -2474,7 +2044,6 @@ function setBudget(){
   saveFinance();renderFinance();
   showToast('📋','Budget set',`${cat}: ${fmt(amt)}/month`);
 }
-
 function addWishItem(){
   const name=document.getElementById('wishName').value.trim();
   const price=parseFloat(document.getElementById('wishPrice').value)||0;
@@ -2483,11 +2052,9 @@ function addWishItem(){
   if(!FINANCE.wishlist) FINANCE.wishlist=[];
   FINANCE.wishlist.push({id:Date.now(),name,price,icon,saved:0});
   document.getElementById('wishName').value='';document.getElementById('wishPrice').value='';document.getElementById('wishIcon').value='';
-  saveFinance();renderFinance();
-  showToast('🛒','Added to wishlist!',name);
+  saveFinance();renderFinance();showToast('🛒','Added to wishlist!',name);
 }
 function deleteWishItem(id){FINANCE.wishlist=FINANCE.wishlist.filter(w=>w.id!==id);saveFinance();renderFinance();}
-
 function switchFinTab(tab,btn){
   document.querySelectorAll('.fin-tab').forEach(b=>b.classList.remove('active'));
   document.querySelectorAll('.fin-tab-content').forEach(c=>c.classList.remove('active'));
@@ -2495,9 +2062,7 @@ function switchFinTab(tab,btn){
   const el=document.getElementById('fintab-'+tab);
   if(el) el.classList.add('active');
 }
-
 function renderFinance(){
-  // hero
   const totalSavings=FINANCE.transactions?.filter(t=>t.type==='saving').reduce((a,t)=>a+t.amount,0)||0;
   const now=new Date();
   const monthTx=FINANCE.transactions?.filter(t=>t.date&&t.date.startsWith(`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`));
@@ -2507,10 +2072,8 @@ function renderFinance(){
   document.getElementById('finIncome').textContent=fmt(income);
   document.getElementById('finExpense').textContent=fmt(expense);
   document.getElementById('finSavings').textContent=fmt(totalSavings);
-  // today's date default for txDate
   const txDateEl=document.getElementById('txDate');
   if(txDateEl&&!txDateEl.value) txDateEl.value=new Date().toISOString().split('T')[0];
-  // category bars
   const catSpend={};
   (FINANCE.transactions||[]).filter(t=>t.type==='expense').forEach(t=>{catSpend[t.cat]=(catSpend[t.cat]||0)+t.amount;});
   const maxSpend=Math.max(...Object.values(catSpend),1);
@@ -2519,122 +2082,63 @@ function renderFinance(){
     const pct=Math.round(amt/maxSpend*100);
     const budget=(FINANCE.budgets||{})[cat];
     const over=budget&&amt>budget;
-    return `<div class="ana-bar-row">
-      <div class="ana-label">${ci.icon} ${cat}</div>
-      <div class="ana-track"><div class="ana-fill" style="width:${pct}%;background:${over?'#f87171':ci.color}"></div></div>
-      <div class="ana-val" style="color:${over?'#f87171':ci.color}">${fmt(amt)}</div>
-    </div>`;
+    return `<div class="ana-bar-row"><div class="ana-label">${ci.icon} ${cat}</div><div class="ana-track"><div class="ana-fill" style="width:${pct}%;background:${over?'#f87171':ci.color}"></div></div><div class="ana-val" style="color:${over?'#f87171':ci.color}">${fmt(amt)}</div></div>`;
   }).join('')||'<div style="color:var(--muted2);font-size:.78rem">No expenses yet.</div>';
-  // recent list
   const recent=(FINANCE.transactions||[]).slice(0,8);
   document.getElementById('finRecentList').innerHTML=renderTxList(recent);
   document.getElementById('finAllList').innerHTML=renderTxList(FINANCE.transactions||[]);
-  // budget
   document.getElementById('finBudgetList').innerHTML=Object.entries(FINANCE.budgets||{}).map(([cat,amt])=>{
     const ci=FINANCE_CATS[cat]||{icon:'📦',color:'#94a3b8'};
     const spent=(FINANCE.transactions||[]).filter(t=>t.cat===cat&&t.type==='expense'&&t.date?.startsWith(`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`)).reduce((a,t)=>a+t.amount,0);
     const pct=Math.min(100,Math.round(spent/amt*100));
     const over=pct>=100;
-    return `<div class="budget-cat">
-      <div class="bc-head">
-        <div class="bc-name">${ci.icon} ${cat}</div>
-        <div class="bc-amounts">${fmt(spent)} / ${fmt(amt)} ${over?'⚠️ Over budget!':''}</div>
-      </div>
-      <div class="bc-track"><div class="bc-fill" style="width:${pct}%;background:${over?'#f87171':ci.color}"></div></div>
-    </div>`;
+    return `<div class="budget-cat"><div class="bc-head"><div class="bc-name">${ci.icon} ${cat}</div><div class="bc-amounts">${fmt(spent)} / ${fmt(amt)} ${over?'⚠️ Over budget!':''}</div></div><div class="bc-track"><div class="bc-fill" style="width:${pct}%;background:${over?'#f87171':ci.color}"></div></div></div>`;
   }).join('')||'<div style="color:var(--muted2);font-size:.78rem">No budgets set.</div>';
-  // wishlist
   document.getElementById('finWishList').innerHTML=(FINANCE.wishlist||[]).map(w=>{
     const pct=w.price?Math.min(100,Math.round((w.saved||0)/w.price*100)):0;
-    return `<div class="wish-item">
-      <div class="wish-icon">${w.icon}</div>
-      <div class="wish-info">
-        <div class="wish-name">${w.name}</div>
-        <div class="wish-price">${fmt(w.price)}</div>
-        <div class="wish-progress">
-          <div class="wish-bar"><div class="wish-fill" style="width:${pct}%"></div></div>
-          <div class="wish-pct">${pct}%</div>
-        </div>
-      </div>
-      <button class="wish-del" onclick="deleteWishItem(${w.id})">✕</button>
-    </div>`;
+    return `<div class="wish-item"><div class="wish-icon">${w.icon}</div><div class="wish-info"><div class="wish-name">${w.name}</div><div class="wish-price">${fmt(w.price)}</div><div class="wish-progress"><div class="wish-bar"><div class="wish-fill" style="width:${pct}%"></div></div><div class="wish-pct">${pct}%</div></div></div><button class="wish-del" onclick="deleteWishItem(${w.id})">✕</button></div>`;
   }).join('')||'<div style="color:var(--muted2);font-size:.78rem">Wishlist empty.</div>';
 }
-
 function renderTxList(txs){
   if(!txs||!txs.length) return '<div style="color:var(--muted2);font-size:.78rem">No transactions yet.</div>';
   return txs.map(tx=>{
     const ci=FINANCE_CATS[tx.cat]||{icon:'📦',color:'#94a3b8'};
     const amtClass=tx.type==='income'||tx.type==='saving'?'income':'expense';
     const sign=tx.type==='income'?'+':'-';
-    return `<div class="exp-row">
-      <div class="exp-cat-icon" style="background:${ci.color}15">${ci.icon}</div>
-      <div class="exp-info">
-        <div class="exp-name">${tx.desc||tx.cat}</div>
-        <div class="exp-meta">${tx.date||''} · ${tx.type}</div>
-      </div>
-      <div class="exp-amount ${amtClass}">${sign}${fmt(tx.amount)}</div>
-      <button class="exp-del" onclick="deleteTransaction(${tx.id})">✕</button>
-    </div>`;
+    return `<div class="exp-row"><div class="exp-cat-icon" style="background:${ci.color}15">${ci.icon}</div><div class="exp-info"><div class="exp-name">${tx.desc||tx.cat}</div><div class="exp-meta">${tx.date||''} · ${tx.type}</div></div><div class="exp-amount ${amtClass}">${sign}${fmt(tx.amount)}</div><button class="exp-del" onclick="deleteTransaction(${tx.id})">✕</button></div>`;
   }).join('');
 }
 
 // ═══════════════════════════════════════════════
 //  JOURNAL
 // ═══════════════════════════════════════════════
-function selectMood(m,btn){
-  journalMood=m;
-  document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('selected'));
-  btn.classList.add('selected');
-}
-function addJournalTag(){
-  const inp=document.getElementById('journalTag');
-  const tag=inp.value.trim();
-  if(!tag) return;
-  journalTags.push(tag);
-  inp.value='';
-  renderJournalTagsPreview();
-}
-function renderJournalTagsPreview(){
-  document.getElementById('journalTagsPreview').innerHTML=journalTags.map((t,i)=>`<span class="je-tag">${t} <span style="cursor:pointer" onclick="journalTags.splice(${i},1);renderJournalTagsPreview()">×</span></span>`).join('');
-}
+function selectMood(m,btn){journalMood=m;document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');}
+function addJournalTag(){const inp=document.getElementById('journalTag');const tag=inp.value.trim();if(!tag)return;journalTags.push(tag);inp.value='';renderJournalTagsPreview();}
+function renderJournalTagsPreview(){document.getElementById('journalTagsPreview').innerHTML=journalTags.map((t,i)=>`<span class="je-tag">${t} <span style="cursor:pointer" onclick="journalTags.splice(${i},1);renderJournalTagsPreview()">×</span></span>`).join('');}
 function linkQuitHabitToEntry(){
   const qGoals=GOALS.filter(g=>g.cat==='quit');
   if(!qGoals.length){showToast('⚠️','No quit habits','Add quit habits first');return;}
   const opts=qGoals.map((g,i)=>`${i+1}. ${g.name}`).join('\n');
-  const idx=prompt(`Which quit habit to link?\n${opts}\n\nEnter number:`);
+  const idx=prompt(`Which quit habit?\n${opts}\n\nEnter number:`);
   const g=qGoals[parseInt(idx)-1];
-  if(g){
-    const ta=document.getElementById('journalText');
-    ta.value+=(ta.value?'\n\n':'')+`[Quit habit: ${g.name}] Progress: ${QUIT_DATA[g.id]?Math.floor((Date.now()-new Date(QUIT_DATA[g.id].startDate).getTime())/86400000):0} days free.`;
-    journalTags.push('quit-'+g.name.toLowerCase().replace(/\s+/g,'-'));
-    renderJournalTagsPreview();
-  }
+  if(g){const ta=document.getElementById('journalText');ta.value+=(ta.value?'\n\n':'')+`[Quit habit: ${g.name}] Progress: ${QUIT_DATA[g.id]?Math.floor((Date.now()-new Date(QUIT_DATA[g.id].startDate).getTime())/86400000):0} days free.`;journalTags.push('quit-'+g.name.toLowerCase().replace(/\s+/g,'-'));renderJournalTagsPreview();}
 }
 function saveJournalEntry(){
   const text=document.getElementById('journalText').value.trim();
   if(!text){showToast('⚠️','Write something first','');return;}
   JOURNAL.unshift({id:Date.now(),date:new Date().toISOString(),mood:journalMood,text,tags:[...journalTags],linkedHabit:null});
-  document.getElementById('journalText').value='';
-  journalTags=[];renderJournalTagsPreview();
-  saveJournal();renderJournal();
-  showToast('📓','Entry saved!','Keep reflecting — it builds awareness');
+  document.getElementById('journalText').value='';journalTags=[];renderJournalTagsPreview();saveJournal();renderJournal();
+  showToast('📓','Entry saved!','Keep reflecting');
 }
 function renderJournal(){
   const el=document.getElementById('journalList');
   if(!el) return;
   el.innerHTML=JOURNAL.slice(0,20).map(e=>{
     const d=new Date(e.date);
-    const ds=`${d.toLocaleDateString()} ${d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}`;
+    const ds=`${d.toLocaleDateString()} ${d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}`;
     const tags=e.tags?.length?e.tags.map(t=>`<span class="je-tag">${t}</span>`).join(''):'';
-    const finNote=e.tags?.includes('finance')?`<div class="je-habit-link">💰 Finance transaction</div>`:'';
-    return `<div class="journal-entry">
-      <div class="je-head"><div class="je-date">${ds}</div><div class="je-mood">${e.mood||'😊'}</div></div>
-      <div class="je-text">${e.text}</div>
-      ${tags?`<div class="je-tags">${tags}</div>`:''}
-      ${finNote}
-    </div>`;
-  }).join('')||'<div style="color:var(--muted2);font-size:.82rem">No entries yet. Write your first reflection!</div>';
+    return `<div class="journal-entry"><div class="je-head"><div class="je-date">${ds}</div><div class="je-mood">${e.mood||'😊'}</div></div><div class="je-text">${e.text}</div>${tags?`<div class="je-tags">${tags}</div>`:''}</div>`;
+  }).join('')||'<div style="color:var(--muted2);font-size:.82rem">No entries yet.</div>';
 }
 
 // ═══════════════════════════════════════════════
@@ -2669,46 +2173,23 @@ function joinChallenge(id){pendingChallenge=id;document.getElementById('privacyM
 function closeModal(){document.getElementById('privacyModal').classList.remove('open');pendingChallenge=null;}
 function confirmJoin(){
   if(pendingChallenge){const c=CHALLENGES.find(ch=>ch.id===pendingChallenge);if(c){c.joined=true;c.participants+=1;}}
-  closeModal();renderChallenges();
-  showToast('⚔️','Challenge joined!','Good luck!');
+  closeModal();renderChallenges();showToast('⚔️','Challenge joined!','Good luck!');
 }
 
 // ═══════════════════════════════════════════════
 //  ANALYTICS
 // ═══════════════════════════════════════════════
 function renderAnalytics(){
-  // heatmap
   const hm=document.getElementById('heatmap');
-  if(hm){
-    hm.innerHTML=Array.from({length:30},(_,i)=>{
-      const v=Math.random();
-      const c=v<.2?'var(--border)':v<.5?'rgba(124,58,237,.2)':v<.8?'rgba(124,58,237,.5)':'#7c3aed';
-      return `<div class="hm-day" style="background:${c}" title="Day ${i+1}"></div>`;
-    }).join('');
-  }
-  // cat bars
+  if(hm){hm.innerHTML=Array.from({length:30},(_,i)=>{const v=Math.random();const c=v<.2?'var(--border)':v<.5?'rgba(124,58,237,.2)':v<.8?'rgba(124,58,237,.5)':'#7c3aed';return`<div class="hm-day" style="background:${c}" title="Day ${i+1}"></div>`;}).join('');}
   const cats=[...new Set(GOALS.map(g=>g.cat))];
   document.getElementById('anabars').innerHTML=cats.map(catId=>{
-    const m=getCatMeta(catId);
-    const gs=GOALS.filter(g=>g.cat===catId);
-    const done=gs.filter(g=>taskDone[g.id]).length;
-    const pct=gs.length?Math.round(done/gs.length*100):0;
-    return `<div class="ana-bar-row">
-      <div class="ana-label">${m.icon} ${m.name.split(' ')[0]}</div>
-      <div class="ana-track"><div class="ana-fill" style="width:${pct}%;background:${m.color}"></div></div>
-      <div class="ana-val" style="color:${m.color}">${pct}%</div>
-    </div>`;
+    const m=getCatMeta(catId);const gs=GOALS.filter(g=>g.cat===catId);const done=gs.filter(g=>taskDone[g.id]).length;const pct=gs.length?Math.round(done/gs.length*100):0;
+    return`<div class="ana-bar-row"><div class="ana-label">${m.icon} ${m.name.split(' ')[0]}</div><div class="ana-track"><div class="ana-fill" style="width:${pct}%;background:${m.color}"></div></div><div class="ana-val" style="color:${m.color}">${pct}%</div></div>`;
   }).join('');
-  // weekly
   const days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
   const vals=[88,75,92,60,85,40,70];
-  document.getElementById('weeklyBars').innerHTML=days.map((d,i)=>`
-    <div class="ana-bar-row">
-      <div class="ana-label">${d}</div>
-      <div class="ana-track"><div class="ana-fill" style="width:${vals[i]}%;background:linear-gradient(90deg,#7c3aed,#0ea5e9)"></div></div>
-      <div class="ana-val" style="color:var(--muted2)">${vals[i]}%</div>
-    </div>`).join('');
-  // stats
+  document.getElementById('weeklyBars').innerHTML=days.map((d,i)=>`<div class="ana-bar-row"><div class="ana-label">${d}</div><div class="ana-track"><div class="ana-fill" style="width:${vals[i]}%;background:linear-gradient(90deg,#7c3aed,#0ea5e9)"></div></div><div class="ana-val" style="color:var(--muted2)">${vals[i]}%</div></div>`).join('');
   const done=GOALS.filter(g=>taskDone[g.id]).length;
   document.getElementById('statsActive').textContent=47;
   document.getElementById('statsStreak').textContent=streak;
@@ -2785,8 +2266,7 @@ function buyItem(id,price){
   if(coins<price){showToast('⚠️','Not enough coins',`Need ${price} 🪙`);return;}
   const item=STORE_ITEMS.find(i=>i.id===id);
   if(!item||item.owned) return;
-  coins-=price;item.owned=true;
-  updateNavCounters();renderStore();
+  coins-=price;item.owned=true;updateNavCounters();renderStore();
   showToast('🛍️','Item purchased!',item.name+' is now yours');
 }
 
@@ -2805,12 +2285,7 @@ const LB_GLOBAL=[
 function renderLeaderboard(){
   document.getElementById('globalLB').innerHTML=LB_GLOBAL.map((p,i)=>{
     const rc=i===0?'gold':i===1?'silver':i===2?'bronze':'';
-    return `<div class="lb-row ${p.you?'lb-you':''}">
-      <div class="lb-rank ${rc}">${i<3?['🥇','🥈','🥉'][i]:i+1}</div>
-      <div class="lb-ava" style="background:rgba(124,58,237,.1)">${p.you?userAvatar:p.ava}</div>
-      <div class="lb-info"><div class="lb-name">${p.you?userName+' (You)':p.name}</div><div class="lb-streak">🔥 ${p.you?streak:p.streak} days</div></div>
-      <div class="lb-xp">✦ ${(p.you?xp:p.xp).toLocaleString()}</div>
-    </div>`;
+    return`<div class="lb-row ${p.you?'lb-you':''}"><div class="lb-rank ${rc}">${i<3?['🥇','🥈','🥉'][i]:i+1}</div><div class="lb-ava" style="background:rgba(124,58,237,.1)">${p.you?userAvatar:p.ava}</div><div class="lb-info"><div class="lb-name">${p.you?userName+' (You)':p.name}</div><div class="lb-streak">🔥 ${p.you?streak:p.streak} days</div></div><div class="lb-xp">✦ ${(p.you?xp:p.xp).toLocaleString()}</div></div>`;
   }).join('');
 }
 function switchLBTab(tab,btn){
@@ -2834,20 +2309,12 @@ function renderShareCard(){
   const cats=[...new Set(GOALS.map(g=>g.cat))].slice(0,4);
   const barColors={mental:'#a78bfa',physical:'#38bdf8',spiritual:'#fbbf24',productivity:'#fb923c',financial:'#4ade80',social:'#e879f9',maintenance:'#34d399',quit:'#f472b6'};
   document.getElementById('scBars').innerHTML=cats.map(catId=>{
-    const m=getCatMeta(catId);
-    const gs=GOALS.filter(g=>g.cat===catId);
-    const done=gs.filter(g=>taskDone[g.id]).length;
-    const pct=gs.length?Math.round(done/gs.length*100):0;
-    const c=barColors[catId]||'#a78bfa';
-    return `<div class="sc-bar-row">
-      <div class="sc-bar-label">${m.icon} ${m.name.split(' ')[0]}</div>
-      <div class="sc-bar-track"><div class="sc-bar-fill" style="width:${pct}%;background:${c}"></div></div>
-      <span style="font-size:.62rem;opacity:.7;width:28px;text-align:right">${pct}%</span>
-    </div>`;
+    const m=getCatMeta(catId);const gs=GOALS.filter(g=>g.cat===catId);const done=gs.filter(g=>taskDone[g.id]).length;const pct=gs.length?Math.round(done/gs.length*100):0;const c=barColors[catId]||'#a78bfa';
+    return`<div class="sc-bar-row"><div class="sc-bar-label">${m.icon} ${m.name.split(' ')[0]}</div><div class="sc-bar-track"><div class="sc-bar-fill" style="width:${pct}%;background:${c}"></div></div><span style="font-size:.62rem;opacity:.7;width:28px;text-align:right">${pct}%</span></div>`;
   }).join('');
 }
 function shareToplatform(platform){
-  const text=`🚀 My LevelUp Progress!\n\n${userAvatar} ${userName} · Level ${level}\n🔥 ${streak} day streak\n✦ ${xp.toLocaleString()} XP earned\n📋 ${GOALS.length} habits tracked daily\n\nJoin me on LevelUp! #LevelUp #Productivity`;
+  const text=`🚀 My LevelUp Progress!\n\n${userAvatar} ${userName} · Level ${level}\n🔥 ${streak} day streak\n✦ ${xp.toLocaleString()} XP earned\n\n#LevelUp #Productivity`;
   const urls={twitter:`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`,whatsapp:`https://wa.me/?text=${encodeURIComponent(text)}`};
   if(urls[platform]) window.open(urls[platform],'_blank');
   else navigator.clipboard.writeText(text).then(()=>showToast('📸','Caption copied!','Paste on '+platform));
@@ -2857,6 +2324,7 @@ function copyShareText(){navigator.clipboard.writeText(`🚀 ${userName} · Lv.$
 // ═══════════════════════════════════════════════
 //  SETTINGS
 // ═══════════════════════════════════════════════
+const AVATARS=['🧠','💪','🔥','⚡','🌟','🏆','🎯','🚀','🦁','🐺','🦅','🌙'];
 function pickSettingsAva(a,btn){
   userAvatar=a;
   document.querySelectorAll('#settingsAvaGrid .av-opt').forEach(b=>b.classList.remove('selected'));
@@ -2865,8 +2333,7 @@ function pickSettingsAva(a,btn){
 function saveProfile(){
   const n=document.getElementById('settingsName')?.value.trim();
   if(n) userName=n;
-  updateNavCounters();
-  showToast('👤','Profile updated!',userName);
+  updateNavCounters();showToast('👤','Profile updated!',userName);
 }
 function exportData(){
   const data={goals:GOALS,taskDone,journal:JOURNAL,finance:FINANCE,oneTasks:ONE_TASKS,quitData:QUIT_DATA,user:{userName,userAvatar,xp,coins,level,streak}};
@@ -2876,9 +2343,7 @@ function exportData(){
   showToast('📥','Data exported!','Check your downloads folder');
 }
 function resetData(){
-  openConfirm('Reset All Data','This will delete ALL your data including goals, journal, and finance history. Are you absolutely sure?',()=>{
-    localStorage.clear();location.reload();
-  });
+  openConfirm('Reset All Data','This will delete ALL your data. Are you absolutely sure?',()=>{localStorage.clear();location.reload();});
 }
 
 // ═══════════════════════════════════════════════
@@ -2889,12 +2354,12 @@ function openConfirm(title,msg,cb){
   document.getElementById('confirmTitle').textContent=title;
   document.getElementById('confirmMsg').textContent=msg;
   confirmCallback=cb;
-  document.getElementById('confirmOkBtn').textContent=title.startsWith('Delete')||title.startsWith('Reset')?'⚠️ Confirm':'OK';
+  document.getElementById('confirmOkBtn').textContent='⚠️ Confirm';
   document.getElementById('confirmModal').classList.add('open');
 }
 function closeConfirm(){document.getElementById('confirmModal').classList.remove('open');confirmCallback=null;}
-document.getElementById('confirmOkBtn').onclick=()=>{if(confirmCallback) confirmCallback();closeConfirm();};
-document.getElementById('confirmModal').addEventListener('click',e=>{if(e.target.id==='confirmModal') closeConfirm();});
+document.getElementById('confirmOkBtn').onclick=()=>{if(confirmCallback)confirmCallback();closeConfirm();};
+document.getElementById('confirmModal').addEventListener('click',e=>{if(e.target.id==='confirmModal')closeConfirm();});
 
 // ═══════════════════════════════════════════════
 //  TOAST
@@ -2909,74 +2374,113 @@ function showToast(icon,t1,t2){
 }
 
 // ═══════════════════════════════════════════════
-//  BOOT — runs after ALL functions are defined
+//  ✅ FIX 2: PWA — Service Worker Registration
+//  Registers sw.js so the browser can cache assets
+//  and show the "Add to Home Screen" install prompt.
 // ═══════════════════════════════════════════════
+let deferredPrompt = null;
 
-// Apply saved theme
-const savedThemeOnBoot = localStorage.getItem('lu_theme');
-setTheme(savedThemeOnBoot || 'dark');
-
-// Apply saved language
-const savedLangOnBoot = localStorage.getItem('lu_lang');
-if(savedLangOnBoot && I18N[savedLangOnBoot]){
-  currentLang = savedLangOnBoot;
-  document.documentElement.dir = I18N[savedLangOnBoot].dir;
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then(reg => {
+      console.log('SW registered:', reg.scope);
+    }).catch(err => {
+      console.warn('SW registration failed:', err);
+    });
+  });
 }
 
-// Load saved user data or use defaults
-const savedUserData = JSON.parse(localStorage.getItem('lu_user') || 'null');
-if(savedUserData){
-  userName   = savedUserData.userName  || userName;
-  userAvatar = savedUserData.userAvatar|| userAvatar;
-  xp         = savedUserData.xp        || xp;
-  coins      = savedUserData.coins     || coins;
-  level      = savedUserData.level     || level;
-  streak     = savedUserData.streak    || streak;
+// Capture the install prompt
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  // Only show if not dismissed before
+  if (!localStorage.getItem('pwa_dismissed')) {
+    document.getElementById('pwaInstallBanner').classList.add('show');
+  }
+});
+
+document.getElementById('pwaInstallBtn').addEventListener('click', async () => {
+  document.getElementById('pwaInstallBanner').classList.remove('show');
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    if (outcome === 'accepted') {
+      showToast('📲', 'LevelUp installed!', 'Find it on your home screen');
+    }
+  }
+});
+
+document.getElementById('pwaDismissBtn').addEventListener('click', () => {
+  document.getElementById('pwaInstallBanner').classList.remove('show');
+  localStorage.setItem('pwa_dismissed', '1');
+});
+
+window.addEventListener('appinstalled', () => {
+  document.getElementById('pwaInstallBanner').classList.remove('show');
+  deferredPrompt = null;
+});
+
+// ═══════════════════════════════════════════════
+//  BOOT
+// ═══════════════════════════════════════════════
+const savedTheme = localStorage.getItem('lu_theme');
+setTheme(savedTheme || 'dark');
+
+const savedLang = localStorage.getItem('lu_lang');
+if (savedLang && I18N[savedLang]) {
+  currentLang = savedLang;
+  document.documentElement.dir = I18N[savedLang].dir;
 }
 
-// Set today's date in finance tx input
+const savedUser = JSON.parse(localStorage.getItem('lu_user') || 'null');
+if (savedUser) {
+  userName   = savedUser.userName   || userName;
+  userAvatar = savedUser.userAvatar || userAvatar;
+  xp         = savedUser.xp         || xp;
+  coins      = savedUser.coins       || coins;
+  level      = savedUser.level       || level;
+  streak     = savedUser.streak      || streak;
+}
+
 const txDateEl = document.getElementById('txDate');
-if(txDateEl) txDateEl.value = new Date().toISOString().split('T')[0];
+if (txDateEl) txDateEl.value = new Date().toISOString().split('T')[0];
 
-// Show welcome banner on first visit
 const isFirstVisit = !localStorage.getItem('lu_user');
 const welcomeBanner = document.getElementById('welcomeBanner');
-if(isFirstVisit && welcomeBanner) welcomeBanner.style.display = 'block';
+if (isFirstVisit && welcomeBanner) welcomeBanner.style.display = 'block';
 
-// Welcome banner functions
 let quickAva = '🧠';
-function setQuickAva(ava, btn){
+function setQuickAva(ava, btn) {
   quickAva = ava;
-  document.querySelectorAll('#quickAvaRow button').forEach(b=>{
-    b.style.background='rgba(255,255,255,.06)';
-    b.style.borderColor='transparent';
+  document.querySelectorAll('#quickAvaRow button').forEach(b => {
+    b.style.background = 'rgba(255,255,255,.06)';
+    b.style.borderColor = 'transparent';
   });
-  btn.style.background='rgba(124,58,237,.2)';
-  btn.style.borderColor='#7c3aed';
+  btn.style.background = 'rgba(124,58,237,.2)';
+  btn.style.borderColor = '#7c3aed';
 }
-function saveWelcome(){
+function saveWelcome() {
   const n = document.getElementById('quickNameInput').value.trim();
-  if(n) userName = n;
+  if (n) userName = n;
   userAvatar = quickAva;
   saveUser();
   const wb = document.getElementById('welcomeBanner');
-  if(wb) wb.style.display = 'none';
+  if (wb) wb.style.display = 'none';
   renderAll();
-  showToast('⚡','Welcome, '+userName+'!','Your Life OS is ready. Let\'s build something great.');
+  showToast('⚡', 'Welcome, ' + userName + '!', "Your Life OS is ready.");
 }
-// Also allow Enter in the name input
-document.getElementById('quickNameInput').addEventListener('keydown', function(e){
-  if(e.key === 'Enter') saveWelcome();
+document.getElementById('quickNameInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') saveWelcome();
 });
 
-// Launch the app immediately
+// Launch
 renderAll();
 
-// Apply saved language translations after render
-if(savedLangOnBoot && savedLangOnBoot !== 'en'){
-  setTimeout(() => setLang(savedLangOnBoot), 80);
+if (savedLang && savedLang !== 'en') {
+  setTimeout(() => setLang(savedLang), 80);
 }
-
 </script>
 </body>
 </html>
